@@ -1,0 +1,141 @@
+.menu-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+
+.menu-wrap .toggler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+}
+
+.menu-wrap .hamburguer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hamburguer line */
+
+.menu-wrap .hamburguer>div {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+/* Top and bottom lines */
+.menu-wrap .hamburguer>div::before,
+.menu-wrap .hamburguer>div::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+    width: 100%;
+    height: 2px;
+    background-color: inherit;
+}
+
+/* Moves line down */
+.menu-wrap .hamburguer>div::after {
+    top: 10px;
+}
+
+/* Toggler Animate */
+.menu-wrap .toggler:checked+.hamburguer>div {
+    transform: rotate(45deg);
+}
+
+/* Turn lines into X */
+.menu-wrap .toggler:checked+.hamburguer>div:before,
+.menu-wrap .toggler:checked+.hamburguer>div:after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+/* Rotate on hover when checked */
+.menu-wrap .toggler:checked:hover+.hamburguer>div {
+    transform: rotate(225deg);
+}
+
+/* Rotate on hover when checked */
+.menu-wrap .toggler:hover+.hamburguer>div:before,
+.menu-wrap .toggler:hover+.hamburguer>div:after {
+    top:0;
+    transition: all 0.2s ease-out;
+}
+
+
+/* Show Menu */
+
+.menu-wrap .toggler:checked ~ .menu{
+    visibility: visible;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div{
+    transform: scale(1);
+    transition-duration: var(--menu-speed);
+}
+
+
+.menu-wrap .menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.menu-wrap .menu > div{
+    background: var(--overlay-color);
+    border-radius:50%;
+    width: 200vw;
+    height: 200vh;
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: scale(0);
+    transform: all 0.4s ease;
+}
+
+.menu-wrap .menu > div > ul > li{
+list-style: none;
+color: white;
+font-size: 1.5rem;
+padding: 1rem;
+}
+
+.menu-wrap .menu > div > ul > li > a{
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.4s ease;
+}
+
