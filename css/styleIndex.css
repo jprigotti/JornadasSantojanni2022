@@ -117,3 +117,26 @@ body {
     font-size: 1.3rem;
     color: inherit;
 }
+
+
+
+/* MEDIA QUERIES SM 576*/
+@media(max-width: 576px) {
+    .showcase h1 {
+        font-size: 3rem;
+    }
+    
+    .showcase h2 {
+        font-size: 2.5rem;
+    }
+    
+    .showcase p {
+        font-size: 1.5rem;
+
+    }
+    
+    .showcase .btn {
+        font-size: 1rem;
+    
+    }
+}
