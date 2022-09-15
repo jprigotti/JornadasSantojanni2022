@@ -16,13 +16,12 @@ body {
 .container:before {
     content: '';
     position: absolute;
-    top: -700px;
-    left: -300px;
-    width: 250%;
-    height: 100%;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 45vh;
     background-color: #0093AB;
-    transform: rotate(165deg);
-    z-index: -1;
+    z-index: -10;
 }
 
 h1{
@@ -72,26 +71,16 @@ h1{
 
 @media(max-width:1200px) {
 
-    .container:before {
-        top: -500px;
-        left: -300px;
-    }
 }
 
 @media(max-width:992px) {
 
-    .container:before {
-        top: -500px;
-        left: -300px;
-    }
+
 }
 
 @media(max-width:778px) {
 
-    .container:before {
-        top: -500px;
-        left: -300px;
-    }
+
 }
 
 
@@ -109,8 +98,4 @@ h1{
         border: none;
     }
 
-    .container:before {
-        top: -500px;
-        left: -300px;
-    }
 }
