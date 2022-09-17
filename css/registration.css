@@ -21,11 +21,14 @@ body {
 /* Styling for FORM Section */
 .form {
     width: 90vw;
+    height: 100vh;
     margin: 0 auto;
 }
 
 /* Ajax is the class of the form - used for Ajax JS */
-.ajax {}
+.ajax {
+    
+}
 
 /* formContainer class styles the inputs */
 .formContainer {
@@ -36,7 +39,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     border-radius: 10px;
-    background-image: linear-gradient(rgba(13, 110, 139, 0.85), rgba(13, 110, 139, 0.25));
+    background-image: linear-gradient(rgba(13, 110, 139, 0.85), rgba(13, 110, 139, 0.2));
     box-shadow: 3px 3px 3px 2px rgba(24, 39, 51, 0.5);
 }
 
@@ -89,6 +92,37 @@ body {
     background-color: rgba(24, 39, 51, 0.60);
     color: #f4f4f4;
     scale: 0.98;
+}
+
+
+
+/* ***************************************************
+                        FOOTER
+*******************************************************/
+
+.footerContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #182733;
+    color: #128db3;
+    padding: 1rem;
+}
+
+.footerContainer .icons {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 1rem;
+}
+
+.footerContainer .icons a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: inherit;
 }
 
 

@@ -8,7 +8,7 @@ $('form.ajax').submit(function (evento) {
 
     //Data already validated - proceed to submit using AJAX-SUBMITFORM
     let that = $(this),
-         url = that.attr('action'),
+        url = that.attr('action'),
         method = that.attr('method'),
         data = {}; //this is gonna be a JS object holding data
 
@@ -49,10 +49,10 @@ $('form.ajax').submit(function (evento) {
 function updateSubmitButton() {
     $("#formSubmit").val("Enviado");
     $("#formSubmit").addClass("btnSubmit");
-  
+
     setTimeout(function () {
-      $("#formSubmit").val("Enviar");
-      $("#formSubmit").removeClass("btnSubmit");
+        $("#formSubmit").val("Enviar");
+        $("#formSubmit").removeClass("btnSubmit");
     }, 3000);
-  
-  }
+
+}
