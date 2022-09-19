@@ -30,6 +30,23 @@ body {
 .ajax {}
 
 
+.formHeader{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.formHeader a{
+    text-decoration: none;
+    color: var(--overlay-color);
+}
+
+.formHeader a:hover{
+    color: rgba(24, 39, 51, 0.60);
+}
+
 /* formContainer class styles the inputs */
 .formContainer {
     max-width: 500px;
@@ -49,7 +66,6 @@ body {
     color: #f4f4f4;
     font-size: 1.5rem;
     text-align: center;
-    margin-bottom: 1.5rem;
 }
 
 /* Class w100 set a 100% width */
