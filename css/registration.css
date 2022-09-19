@@ -19,7 +19,6 @@ body {
 /* Styling for FORM Section */
 
 .formBackground {
-    /* position: relative; */
     width: 100%;
     height: 100vh;
     background-image: linear-gradient(rgba(13, 110, 139, 0.2), rgba(13, 110, 139, 0.2)), url("../img/backgroundRegistration.jpg");
@@ -106,8 +105,7 @@ body {
 }
 
 
-.backgroundCredits{
-    position: absolute;
+.backgroundCredits {
     bottom: 10px;
     right: 20px;
     font-size: 0.8rem;
@@ -149,11 +147,11 @@ body {
 
 @media(max-width:778px) {
 
-.formContainer {
-    max-width: 500px;
-    width: 90%;
-    margin: 0 auto;
-}
+    .formContainer {
+        max-width: 500px;
+        width: 90%;
+        margin: 0 auto;
+    }
 
 }
 
@@ -165,9 +163,9 @@ body {
     }
 
     .formBackground {
-        /* position: relative; */
         width: 100%;
-        padding-top: 2rem;
+        height: auto;
+        padding: 2rem 0;
     }
 
 }
