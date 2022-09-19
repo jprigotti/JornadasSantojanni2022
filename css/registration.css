@@ -164,4 +164,10 @@ body {
         margin: 0 auto;
     }
 
+    .formBackground {
+        position: relative;
+        width: 100%;
+        padding-top: 2rem;
+    }
+
 }
