@@ -19,7 +19,7 @@ body {
 /* Styling for FORM Section */
 
 .formBackground {
-    position: relative;
+    /* position: relative; */
     width: 100%;
     height: 100vh;
     background-image: linear-gradient(rgba(13, 110, 139, 0.2), rgba(13, 110, 139, 0.2)), url("../img/backgroundRegistration.jpg");
