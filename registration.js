@@ -68,34 +68,45 @@ $('form.ajax').submit(function (evento) {
 
     // userRegistered = vlookupUser(url, data.email);
     // console.log("User registered" + userRegistered);
-
-
-
-
-
-
 });
 
 
 // Local Functions
 
 function processingRegistration() {
-    $("#formSubmit").val("Procesando...");
+    // $("#formSubmit").val("Procesando...");
+    $(".btn").css({ 'visibility': 'hidden' });
+    $(".progressBar").css({ 'visibility': 'visible' });
+    updateProgressBar()
 }
 
 function confirmRegistration() {
-    $("#formSubmit").val("Enviado");
-    $("#formSubmit").addClass("btnSubmit");
-
+    clearInterval(myInterval);
+    $(".progressBar").toggleClass("successBar");
     setTimeout(function () {
-        $("#formSubmit").val("Enviar");
-        $("#formSubmit").removeClass("btnSubmit");
-        $("#formSubmit").addClass("btn");
+        $(".progressBar").toggleClass("successBar");
+        $(".btn").css({ 'visibility': 'visible' });
+        $(".progressBar").css({ 'visibility': 'hidden' });
     }, 3000);
+
+
+
+
+    // $("#formSubmit").val("Enviado");
+    // $("#formSubmit").addClass("btnSubmit");
+
+    // setTimeout(function () {
+    //     $("#formSubmit").val("Enviar");
+    //     $("#formSubmit").removeClass("btnSubmit");
+    //     $("#formSubmit").addClass("btn");
+    // }, 2000);
 }
 
 function rejectRegistration() {
-    $("#formSubmit").val("Enviar");
+    // $("#formSubmit").val("Enviar");
+
+    $(".btn").css({ 'visibility': 'visible' });
+    $(".progressBar").css({ 'visibility': 'hidden' });
 }
 
 //vlookupUse function receives two arguments
@@ -134,4 +145,37 @@ function vlookupUser(url, email) {
         return false;
 
     }
+}
+
+
+//This functions will show/hide the password
+const showPassword = document.querySelector("#showPassword");
+const passwordField = document.querySelector("#passwordField");
+$('#showPassword').on('mousedown', function () {
+    $(this).toggleClass("fa-eye");
+    const type = passwordField.getAttribute("type") === "password" ? "text" : "password";
+    passwordField.setAttribute("type", type);
+});
+
+// $('#showPassword').on('mouseleave', function(){
+//     $(this).toggleClass("fa-eye");
+//     const type = passwordField.getAttribute("type") === "password" ? "text" : "password";
+//     passwordField.setAttribute("type", type);
+// });
+
+
+//This function will update the progress bar
+function updateProgressBar() {
+    const progressBar = document.getElementsByClassName('progressBar')[0]
+    const loop = 3;
+    progressBar.style.setProperty('--width', 0)
+    myInterval = setInterval(() => {
+        const computedStyle = getComputedStyle(progressBar)
+        let width = parseFloat(computedStyle.getPropertyValue('--width')) || 0
+        progressBar.style.setProperty('--width', width + .25)
+        if (width == 95) {
+            // progressBar.style.setProperty('--width', 0)
+            clearInterval(myInterval);
+        }
+    }, 5)
 }

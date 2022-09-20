@@ -21,21 +21,34 @@
         <div class="formBackground">
             <form
                 action="https://script.google.com/macros/s/AKfycbw3Sfjvn0F80pSlgw8inM9ZNqxT9TurI7SnEu3_OXx8seoZshBum_Erd5_0Uhdz7pf0MA/exec"
-                method="post" class="ajax">
+                method="post" class="ajax" id="form">
 
                 <div class="formContainer">
                     <div class="formHeader">
-                        <div><h2>Registrese aquí</h2></div>
-                        <div><a href="index.html"><i class="fa-solid fa-circle-xmark fa-2xl"></i></a></div>
+                        <div>
+                            <h2 class="password">Registrese aquí</h2>
+                        </div>
+                        <div><a href="index.html"><i class="fa-solid fa-door-open fa-2xl"></i></a></div>
                     </div>
 
                     <input class="input w100" type="text" name="firstName" placeholder="Nombre">
                     <input class="input w100" type="text" name="lastName" placeholder="Apellido">
                     <input class="input w100" type="text" name="cell" placeholder="cell">
                     <input class="input w100" type="email" name="email" placeholder="E-mail">
-                    <input class="input w100" type="password" name="password" placeholder="Contraseña">
-                    <input class="w50 w100 btn" type="submit" value="Enviar" id="formSubmit">
-                    <input class="w50 w100 btn" type="reset" value="Borrar">
+                    <div class="passwordContainer">
+                        <input class="input w100" type="password" name="password" placeholder="Contraseña"
+                            id="passwordField">
+                        <i class="fa-solid fa-eye-slash" id="showPassword"></i>
+                    </div>
+                    <div class="btnProgressArea">
+                        <div class="btnArea">
+                            <input class="btnWidth btn" type="submit" value="Enviar" id="formSubmit">
+                            <input class="btnWidth btn" type="reset" value="Borrar">
+                        </div>
+                        <div class="progressBar" data-label="Procesando..." data-label1="Enviado"></div>
+                    </div>
+
+
                 </div>
 
             </form>
