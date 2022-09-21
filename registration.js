@@ -34,17 +34,12 @@ $('form.ajax').submit(function (evento) {
         data,
         success: (status) => {
             console.log("Usuario registrado? " + status['vlookupResult']);
-
-
             if (status['vlookupResult'] === true) {
                 //User already registered
-                alert("Usted ya se encuentra registrado");
                 rejectRegistration();
-                document.querySelector(".ajax").reset();
             } else {
                 // User Not registered   
                 // Proceed to submit using AJAX-POST
-
                 $.ajax({
                     method: method,
                     redirect: "follow",
@@ -61,11 +56,7 @@ $('form.ajax').submit(function (evento) {
             }
         },
         error: (err) => console.log(err)
-        // error: (err) => console.log("error"),
     });
-
-    // userRegistered = vlookupUser(url, data.email);
-    // console.log("User registered" + userRegistered);
 });
 
 
@@ -80,17 +71,16 @@ function processingRegistration() {
 
 function confirmRegistration() {
     clearInterval(myInterval); //Stop progress bar counter
-    document.querySelector(".ajax").reset();
-    $('.alert').css({'visibility':'visible'});
-    $(".progressBar").toggleClass("successBar");
-    setTimeout(function () {
-        $(".progressBar").toggleClass("successBar");
-        $(".btn").css({ 'visibility': 'visible' });
-        $(".progressBar").css({ 'visibility': 'hidden' });
-    }, 3000);
-
-
-
+    document.querySelector(".ajax").reset(); //clear all input form
+    $(".btn").css({ 'visibility': 'visible' }); //make btnArea visible
+    $(".progressBar").css({ 'visibility': 'hidden' }); //hide progress bar
+    $('.alertNewUser').css({ 'visibility': 'visible' }); //make alrt new user pop-up visible
+    // $(".progressBar").toggleClass("successBar");
+    // setTimeout(function () {
+    //     $(".progressBar").toggleClass("successBar");
+    //     $(".btn").css({ 'visibility': 'visible' });
+    //     $(".progressBar").css({ 'visibility': 'hidden' });
+    // }, 3000);
 
     // $("#formSubmit").val("Enviado");
     // $("#formSubmit").addClass("btnSubmit");
@@ -103,7 +93,9 @@ function confirmRegistration() {
 }
 
 function rejectRegistration() {
-    clearInterval(myInterval);
+    clearInterval(myInterval); //Stop progress bar counter
+    document.querySelector(".ajax").reset(); //clear all input form
+    $('.alertRegisteredUser').css({ 'visibility': 'visible' }); //make alrt registered user pop-up visible
 
     $(".btn").css({ 'visibility': 'visible' });
     $(".progressBar").css({ 'visibility': 'hidden' });
@@ -182,7 +174,12 @@ function updateProgressBar() {
 }
 
 
-//Este codigo es para cerrar el alertContainer
-$('#alertContainerClose').on('mousedown', function(){
-$('.alert').css({'visibility':'hidden'});
+//Este codigo es para cerrar el alertContainer NewUser
+$('#alertContainerCloseNU').on('mousedown', function () {
+    $('.alertNewUser').css({ 'visibility': 'hidden' });
+});
+
+//Este codigo es para cerrar el alertContainer RegisteredUser
+$('#alertContainerCloseRU').on('mousedown', function () {
+    $('.alertRegisteredUser').css({ 'visibility': 'hidden' });
 });

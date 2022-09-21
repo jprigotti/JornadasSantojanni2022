@@ -243,14 +243,14 @@ body {
 
 
 /* Este es el styling para el Alert */
-.alert{
+.alertNewUser, .alertRegisteredUser{
     background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
     width: 100%;
     height: 100vh;
     z-index: 1;
     position: absolute;
     top: 0;
-    visibility: visible;
+    visibility: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -264,7 +264,6 @@ body {
     border-radius: 5px;
     background-color: rgba(255,255,255,0.85);
     color: var(--overlay-color);
-
 }
 
 .alertContainerClose{
@@ -287,6 +286,14 @@ body {
     display: inline-block;
     margin-left: 1rem;
 
+}
+
+.alertContainer ul{
+    list-style: none;
+}
+
+.alertContainer ul li{
+    padding: 0.5rem ;
 }
 
 /* ***************************************************
@@ -353,6 +360,11 @@ body {
         height: 100vh;
         overflow-y: scroll;
         padding: 2rem 0;
+    }
+
+    .alertContainer{
+        width: 90%;
+        font-size: 0.9rem;
     }
 
 }
