@@ -172,10 +172,11 @@ function updateProgressBar() {
     myInterval = setInterval(() => {
         const computedStyle = getComputedStyle(progressBar)
         let width = parseFloat(computedStyle.getPropertyValue('--width')) || 0
-        progressBar.style.setProperty('--width', width + .25)
+        progressBar.style.setProperty('--width', width + 1)
         if (width == 95) {
-            // progressBar.style.setProperty('--width', 0)
-            clearInterval(myInterval);
+            progressBar.style.setProperty('--width', 0)
+            // clearInterval(myInterval);
         }
-    }, 5)
+        console.log(width);
+    }, 30)
 }

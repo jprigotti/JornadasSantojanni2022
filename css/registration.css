@@ -18,7 +18,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.4;
+    /* line-height: 1.4; */
 }
 
 /* Styling for FORM Section */
@@ -129,20 +129,21 @@ body {
 
 .btnProgressArea {
     width: 100%;
-    height: 125px;
+    height: 4.2rem;
+    margin-top: 1rem;
+    position: relative;
 }
 
 
 .btnArea {
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    position: absolute;
+    top: 0.5rem;
 }
 
 .btnArea .btn {
     text-align: center;
-    margin: 0.75rem 0;
+    margin: 0.5rem 0;
     padding: 0.5rem 0.2rem;
     background-color: rgba(24, 39, 51, 0.80);
     color: #d6d5d5;
@@ -166,18 +167,18 @@ body {
 }
 
 .btnArea .btnWidth {
-    width: 45%;
+    width: 100%;
 }
 
 /* https://www.youtube.com/watch?v=basf1lH1H-E */
 .progressBar {
     visibility: hidden;
     width: 90%;
-    height: 2.5em;
+    height: 2.5rem;
     margin: 0 auto;
     padding: 0;
-    border-radius: 20px;
-    top: -85px;
+    border-radius: 1rem;
+    top: 1rem;
     background-color: var(--overlay-color);
     color: #f4f4f4;
     position: relative;
@@ -193,11 +194,11 @@ body {
     bottom: .5em;
     /* width: 95%; */
     width: calc(var(--width , 0) * 1%);
-    min-width: 2rem;
+    min-width: 2em;
     max-width: calc(100%-1em);
     background-color: #df9760;
-    border-radius: 1em;
-    padding-left: 1em;
+    border-radius: 0.5rem;
+    padding-left: 1rem;
     font-size: 1rem;
     
 }
@@ -205,12 +206,12 @@ body {
 .successBar {
     visibility: hidden;
     width: 90%;
-    height: 2.5em;
+    height: 2.5rem;
     margin: 0 auto;
     padding: 0;
-    border-radius: 20px;
-    top: -85px;
-    background-color: var(--overlay-color);
+    border-radius: 1rem;
+    top: 1rem;
+    background-color: #09411a;
     color: var(--overlay-color);
     position: relative;
 }
@@ -228,8 +229,8 @@ body {
     min-width: 2rem;
     max-width: calc(100%-1em);
     background-color: #60df86;
-    border-radius: 1em;
-    padding-left: 1em;
+    border-radius: 0.5rem;
+    padding-left: 1rem;
     font-size: 1rem;
     
 }
