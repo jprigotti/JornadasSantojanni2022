@@ -54,11 +54,9 @@ $('form.ajax').submit(function (evento) {
                     data: data,
                     success: (result) => {
                         console.log(result);
-                        document.querySelector(".ajax").reset();
                         confirmRegistration();
                     },
                     error: (err) => console.log(err)
-                    // error: (err) => console.log("error"),
                 });
             }
         },
@@ -81,7 +79,9 @@ function processingRegistration() {
 }
 
 function confirmRegistration() {
-    clearInterval(myInterval);
+    clearInterval(myInterval); //Stop progress bar counter
+    document.querySelector(".ajax").reset();
+    $('.alert').css({'visibility':'visible'});
     $(".progressBar").toggleClass("successBar");
     setTimeout(function () {
         $(".progressBar").toggleClass("successBar");
@@ -103,7 +103,7 @@ function confirmRegistration() {
 }
 
 function rejectRegistration() {
-    // $("#formSubmit").val("Enviar");
+    clearInterval(myInterval);
 
     $(".btn").css({ 'visibility': 'visible' });
     $(".progressBar").css({ 'visibility': 'hidden' });
@@ -180,3 +180,9 @@ function updateProgressBar() {
         console.log(width);
     }, 30)
 }
+
+
+//Este codigo es para cerrar el alertContainer
+$('#alertContainerClose').on('mousedown', function(){
+$('.alert').css({'visibility':'hidden'});
+});
