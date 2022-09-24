@@ -22,7 +22,7 @@ $('form.ajax').submit(function (evento) {
         data[name] = value;
     });
 
-console.log(data);
+    console.log(data);
     //check if user is registered or not, runnig a query using AJAX-GET passing data object
 
     $.ajax({
@@ -186,14 +186,40 @@ $('#alertContainerCloseRU').on('mousedown', function () {
 
 
 //This code will insert option in Form Select
-let formSelect = document.getElementById("formSelect");
+// let formSelect = document.getElementById("formSelect");
 
-let option = document.createElement('option');
-option.value="Clinica Medica";
-option.innerHTML="Clinica Medica";
-formSelect.appendChild(option);
-option = document.createElement('option');
-option.value="Cardiología";
-option.innerHTML="Cardiología";
-formSelect.appendChild(option);
+// let option = document.createElement('option');
+// option.value="Clinica Medica";
+// option.innerHTML="Clinica Medica";
+// formSelect.appendChild(option);
+// option = document.createElement('option');
+// option.value="Cardiología";
+// option.innerHTML="Cardiología";
+// formSelect.appendChild(option);
+
+
+$.ajax({
+    method: "get",
+    redirect: "follow",
+    url: 'https://script.google.com/macros/s/AKfycbzQeIrYwMdcPIgQb7wZ9kX5_4ztb5jUEESf9CnAnmYw1DRGWn3sXUYdJ4IZjLbJSTmnww/exec',
+    dataType: 'json',
+    accepts: 'application/json',
+    success: (list) => {
+        let i = 0;
+        let formSelect = document.getElementById("formSelect");
+        let option;
+        do {
+            console.log(list[i][0]);
+
+            option = document.createElement('option');
+            option.value = list[i][0];
+            option.innerHTML = list[i][0];
+            formSelect.appendChild(option);
+            i++;
+        } while (list[i] != null);
+    },
+    error: (err) => console.log(err)
+});
+
+
 
