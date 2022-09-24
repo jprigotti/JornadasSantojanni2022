@@ -46,23 +46,31 @@ body {
 
 .countdownContainer {
     /* border: 1px solid #f4f4f4; */
-    margin-bottom: 2rem;
+    margin: 2rem 0;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    border: 2px solid var(--primary-color);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
 }
 
-.countdownContainer .countdownBox
+.countdownContainerBody{
+    display: flex;
+}
+
+.countdownBox
 {
-    width: 5rem;
-    border: 1px solid #f4f4f4;
+    /* border: 1px solid #f4f4f4; */
     margin: 0 0.5rem;
     padding: 0.2rem;
+    text-align: center;
 }
 
 
-.countdownBox input{
-width: 4rem;
-font-size: 3rem;
+.countdownBox h1{
+/* max-width: 4rem; */
 background: none;
 border: none;
 text-align: center;
@@ -101,10 +109,10 @@ div > span {
     text-decoration: none;
     color: white;
     border: 1px solid white;
-    padding: 0.5rem;
+    padding: 1rem 2rem;
     border-radius: 5px;
     margin-top: 3rem;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 
 }
 
@@ -172,4 +180,10 @@ div > span {
         font-size: 1rem;
 
     }
+
+.countdownContainer{
+    /* margin: 0 auto;
+    width: 90%; */
+}
+
 }
