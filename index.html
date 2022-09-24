@@ -45,22 +45,44 @@
                 </ul>
             </div>
         </div>
+
     </div>
 
-    <header class="showcase">
-        <div class="container showcase-inner">
-            <h1>Jornadas Científicas 2022</h1>
-            <h2>Hospital Santojanni</h2>
-            <p>1-2 de Noviembre</p>
-            <a href="registration.html" class="btn">Inscripción</a>
-        </div>
 
-    </header>
 
 
     <!-- MAIN SECTION -->
     <main>
+        <div class="showcase">
+            <div class="container showcase-inner">
 
+                <!-- Countdown Section -->
+
+                <div class="countdownContainer">
+                    <div class="countdownBox">
+                        <input name="days" type="text" id="days" value="32">
+                        <span>Dias</span>
+                    </div>
+                    <div class="countdownBox ">
+                        <input name="hours" type="text" id="days" value="32">
+                        <span>Horas</span>
+                    </div>
+                    <div class="countdownBox ">
+                        <input name="minutes" type="text" id="days" value="32">
+                        <span>Minutos</span>
+                    </div>
+                    <div class="countdownBox ">
+                        <input name="seconds" type="text" id="days" value="32">
+                        <span>Segundos</span>
+                    </div>
+                </div>
+
+                <h1>Jornadas Científicas 2022</h1>
+                <h2>Hospital Santojanni</h2>
+                <p>1-2 de Noviembre</p>
+                <a href="registration.html" class="btn">Inscripción</a>
+            </div>
+        </div>
     </main>
 
 
@@ -82,8 +104,13 @@
     </footer>
 
 
+    <!-- Loading jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-
+    <!-- Local JavaScript code -->
+    <script src="indexJS.js"></script>
 </body>
 
 </html>

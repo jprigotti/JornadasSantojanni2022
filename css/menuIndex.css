@@ -1,8 +1,15 @@
+:root {
+    --primary-color: rgba(13, 110, 139, 0.75);
+    --overlay-color: rgba(24, 39, 51, 0.85);
+}
+
 .menu-wrap {
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1;
+    width: 100vw;
+    height: 60px;
 }
 
 
@@ -29,6 +36,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Navbar */
+.navBar{
+    /* height: 100%; */
+    background-image: linear-gradient(var(--overlay-color), var(--primary-color));
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    /* background-color: var(--primary-color); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f4f4f4;
 }
 
 /* Hamburguer line */

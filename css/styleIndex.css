@@ -43,6 +43,40 @@ body {
     height: 100%;
 }
 
+
+.countdownContainer {
+    /* border: 1px solid #f4f4f4; */
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.countdownContainer .countdownBox
+{
+    width: 5rem;
+    border: 1px solid #f4f4f4;
+    margin: 0 0.5rem;
+    padding: 0.2rem;
+}
+
+
+.countdownBox input{
+width: 4rem;
+font-size: 3rem;
+background: none;
+border: none;
+text-align: center;
+color: #f4f4f4;
+}
+
+
+div > span {
+    display: block;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+
 .showcase h1,
 .showcase h2 {
     font-family: 'Noto Serif Khmer', serif;
@@ -79,14 +113,13 @@ body {
     scale: 0.98;
 }
 
-
-
 .container {
     max-width: 960px;
     margin: auto;
     overflow: hidden;
     padding: 0 3rem;
 }
+
 
 
 /* ***************************************************
@@ -108,11 +141,11 @@ body {
     width: 100px;
     display: flex;
     justify-content: space-between;
- 
+
     margin-top: 1rem;
 }
 
-.footerContainer .icons a{
+.footerContainer .icons a {
     text-decoration: none;
     font-size: 1.3rem;
     color: inherit;
@@ -125,18 +158,18 @@ body {
     .showcase h1 {
         font-size: 3rem;
     }
-    
+
     .showcase h2 {
         font-size: 2.5rem;
     }
-    
+
     .showcase p {
         font-size: 1.5rem;
 
     }
-    
+
     .showcase .btn {
         font-size: 1rem;
-    
+
     }
 }
