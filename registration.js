@@ -22,7 +22,7 @@ $('form.ajax').submit(function (evento) {
         data[name] = value;
     });
 
-
+console.log(data);
     //check if user is registered or not, runnig a query using AJAX-GET passing data object
 
     $.ajax({
@@ -183,3 +183,17 @@ $('#alertContainerCloseNU').on('mousedown', function () {
 $('#alertContainerCloseRU').on('mousedown', function () {
     $('.alertRegisteredUser').css({ 'visibility': 'hidden' });
 });
+
+
+//This code will insert option in Form Select
+let formSelect = document.getElementById("formSelect");
+
+let option = document.createElement('option');
+option.value="Clinica Medica";
+option.innerHTML="Clinica Medica";
+formSelect.appendChild(option);
+option = document.createElement('option');
+option.value="Cardiología";
+option.innerHTML="Cardiología";
+formSelect.appendChild(option);
+

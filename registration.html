@@ -35,11 +35,13 @@
                     <input class="input w100" type="text" name="lastName" placeholder="Apellido" required>
                     <input class="input w100" type="text" name="cell" placeholder="cell" required>
                     <input class="input w100" type="email" name="email" placeholder="E-mail" required>
-                    <div class="passwordContainer">
+                    <select class="input w100" type="text" name="servicios" id="formSelect" required>
+                    </select>
+                    <!-- <div class="passwordContainer">
                         <input class="input w100" type="password" name="password" placeholder="Contraseña"
                             id="passwordField">
                         <i class="fa-solid fa-eye-slash" id="showPassword"></i>
-                    </div>
+                    </div> -->
                     <div class="btnProgressArea">
                         <div class="btnArea">
                             <input class="btnWidth btn" type="submit" value="Enviar" id="formSubmit">
@@ -54,43 +56,51 @@
             </form>
         </div>
 
-<div class="alertNewUser">
-    <div class="alertContainer">
+        <div class="alertNewUser">
+            <div class="alertContainer">
 
-            <i class="fa-solid fa-circle-xmark fa-xl alertContainerClose" id="alertContainerCloseNU"></i>
+                <i class="fa-solid fa-circle-xmark fa-xl alertContainerClose" id="alertContainerCloseNU"></i>
 
-        <div class="alertContainerHeader">
-            <span><i class="fa-solid fa-user-doctor fa-xl"></i></span> <h1>Registración exitosa!</h1>
+                <div class="alertContainerHeader">
+                    <span><i class="fa-solid fa-user-doctor fa-xl"></i></span>
+                    <h1>Registración exitosa!</h1>
+                </div>
+
+                <p>Ya te enviamos:</p>
+                <ul>
+                    <li><span><i class="fa-regular fa-envelope"></i></span> un e-mail de confirmación (recordá revisar
+                        la carpeta de Spam)</li>
+                    <li><span><i class="fa-regular fa-calendar"></i></span> un evento de Google Calendar (para que lo
+                        agregues a tu calendario)</li>
+                    <li><span><i class="fa-brands fa-whatsapp"></i></span> un mensaje de WhatsApp (agrega el número a
+                        tus contactos para poder consultar al Asistente Virtual)</li>
+                </ul>
+
+            </div>
         </div>
 
-        <p>Ya te enviamos:</p>
-        <ul>
-            <li><span><i class="fa-regular fa-envelope"></i></span> un e-mail de confirmación (recordá revisar la carpeta de Spam)</li>
-            <li><span><i class="fa-regular fa-calendar"></i></span> un evento de Google Calendar (para que lo agregues a tu calendario)</li>
-            <li><span><i class="fa-brands fa-whatsapp"></i></span> un mensaje de WhatsApp (agrega el número a tus contactos para poder consultar al Asistente Virtual)</li>
-        </ul>
+        <div class="alertRegisteredUser">
+            <div class="alertContainer">
 
-    </div>
-</div>
+                <i class="fa-solid fa-circle-xmark fa-xl alertContainerClose" id="alertContainerCloseRU"></i>
 
-<div class="alertRegisteredUser">
-    <div class="alertContainer">
+                <div class="alertContainerHeader">
+                    <span><i class="fa-solid fa-user-doctor fa-xl"></i></span>
+                    <h1>Usuario registrado</h1>
+                </div>
 
-            <i class="fa-solid fa-circle-xmark fa-xl alertContainerClose" id="alertContainerCloseRU"></i>
+                <p>Ya estas registrado. Revisa por favor:</p>
+                <ul>
+                    <li><span><i class="fa-regular fa-envelope"></i></span> tu casilla de correo con el e-mail de
+                        confirmación (recordá revisar la carpeta de Spam)</li>
+                    <li><span><i class="fa-regular fa-calendar"></i></span> tu casilla de correo con el evento de Google
+                        Calendar para que lo agregues a tu calendario</li>
+                    <li><span><i class="fa-brands fa-whatsapp"></i></span> tu WhatsApp (agrega el número a tus contactos
+                        para poder consultar al Asistente Virtual</li>
+                </ul>
 
-        <div class="alertContainerHeader">
-            <span><i class="fa-solid fa-user-doctor fa-xl"></i></span> <h1>Usuario registrado</h1>
+            </div>
         </div>
-
-        <p>Ya estas registrado. Revisa por favor:</p>
-        <ul>
-            <li><span><i class="fa-regular fa-envelope"></i></span> tu casilla de correo con el e-mail de confirmación (recordá revisar la carpeta de Spam)</li>
-            <li><span><i class="fa-regular fa-calendar"></i></span> tu casilla de correo con el evento de Google Calendar para que lo agregues a tu calendario</li>
-            <li><span><i class="fa-brands fa-whatsapp"></i></span> tu WhatsApp (agrega el número a tus contactos para poder consultar al Asistente Virtual</li>
-        </ul>
-
-    </div>
-</div>
 
         <a class="backgroundCredits" href="https://www.vecteezy.com/free-vector/medical-background"
             target="_blank">Medical Background Vectors by Vecteezy</a>

@@ -23,9 +23,11 @@ var x = setInterval(function(){
 
    console.log(days.toString());
 
-    $('input[name=days]').val(days.toString());
-    $('input[name=hours]').val(hours.toString());
-    $('input[name=minutes]').val(minutes);
-    $('input[name=seconds]').val(seconds);
+    // $('input[name=days]').val(days.toString());
+document.querySelector('.days').innerHTML = days;
+document.querySelector('.hours').innerHTML = hours;
+document.querySelector('.minutes').innerHTML = minutes;
+document.querySelector('.seconds').innerHTML = seconds;
+
 
 },1000);
