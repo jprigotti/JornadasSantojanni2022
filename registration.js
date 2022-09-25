@@ -208,9 +208,9 @@ $.ajax({
         let i = 0;
         let formSelect = document.getElementById("formSelect");
         let option;
+
         do {
             console.log(list[i][0]);
-
             option = document.createElement('option');
             option.value = list[i][0];
             option.innerHTML = list[i][0];

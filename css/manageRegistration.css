@@ -1,0 +1,22 @@
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+}
+
+.tableContainer{
+    max-width: 800px !important;
+    margin: 0 auto;
+}
+
+h1{
+    text-align: center;
+    margin: 3rem !important;
+}
