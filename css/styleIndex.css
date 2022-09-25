@@ -113,12 +113,14 @@ div > span {
     border-radius: 5px;
     margin-top: 3rem;
     font-size: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.3);
 
 }
 
 .showcase .btn:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.5);
     scale: 0.98;
+
 }
 
 .container {
@@ -128,6 +130,22 @@ div > span {
     padding: 0 3rem;
 }
 
+
+.eventDates, .eventLocation{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #f4f4f4;
+}
+
+.material-symbols-outlined {
+    margin-right: 1rem;
+      font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
 
 
 /* ***************************************************
