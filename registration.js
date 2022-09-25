@@ -210,8 +210,9 @@ $.ajax({
         let option;
 
         do {
-            console.log(list[i][0]);
+            // console.log(list[i][0]);
             option = document.createElement('option');
+            // option.classList.add('optionClass');
             option.value = list[i][0];
             option.innerHTML = list[i][0];
             formSelect.appendChild(option);
@@ -222,4 +223,26 @@ $.ajax({
 });
 
 
+// let optionClass = document.querySelector('#formSelect');
+// optionClass.addEventListener('mouseover', funcion1);
 
+// function funcion1(){
+// var option = document.querySelector(".optionClass")
+// option.setAttribute("style","background-color:blue")
+// console.log("OK")
+// }
+
+// $('optionClass').hover(function() {
+//         $(this).addClass('highlight');
+//     }, function() {
+//         $(this).removeClass('highlight');
+//     }
+// );
+
+// $('select[name="servicios"] option ').hover(
+//     function() {
+//         $(this).addClass('highlight');
+//     }, function() {
+//         $(this).removeClass('highlight');
+//     }
+// );
