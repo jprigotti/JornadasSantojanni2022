@@ -1,4 +1,8 @@
-
+:root {
+    --primary-color: rgba(13, 110, 139, 0.75);
+    --overlay-color: rgba(24, 39, 51, 0.85);
+    --menu-speed: 0.75s;
+}
 
 * {
     box-sizing: border-box;
@@ -7,16 +11,49 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.4;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: "Poppins", sans-serif;
+    line-height: 1.2;
 }
 
-.tableContainer{
-    max-width: 800px !important;
+.tableContainer {
+    height: 100vh;
+    max-width: 800px;
     margin: 0 auto;
+    border: 1px solid red;
 }
 
-h1{
+h1 {
     text-align: center;
     margin: 3rem !important;
+}
+
+
+.searchPayContainer {
+    width: 100%;
+    border: 1px solid blue;
+    height: 300px;
+}
+
+.searchPayContainer h2 {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.searchForm {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    border: 1px solid red;
+}
+
+.searchForm input {
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+    /* outline: none; */
+    border: 1px solid #3c3c3d;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #3c3c3d;
+
 }

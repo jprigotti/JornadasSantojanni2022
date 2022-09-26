@@ -9,6 +9,7 @@
 
     <!-- Link CSS local -->
     <link rel="stylesheet" href="./css/manageRegistration.css">
+    <link rel="stylesheet" href="./css/styleIndex.css">
 
 
     <!-- Google Fonts -->
@@ -21,6 +22,8 @@
     <!-- Link to Bootstrap CDN -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
    
+    <!-- FontAwesome -->
+<script src="https://kit.fontawesome.com/628afeffd4.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -38,11 +41,24 @@
                 <th>Celular</th>
                 <th>Email</th>
                 <th>Servicio</th>
-                <th>Pago</th>
+                <th>Estado</th>
 
             </tr>
         </thead>
     </table>
+
+
+<div class="searchPayContainer">
+    <h2>Agergar pago</h2>
+    <input type="button" id="purchaseBtn" value="Pagar">
+
+    <form class="searchForm" action="">
+        <label for="cell">Celular</label>
+        <input type="text" id="cell" name="cell" placeholder="Ingrese celular" >
+        <input type="submit" value="Buscar">
+    </form>
+</div>
+
 </div>
 
 
@@ -59,3 +75,20 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
 </body>
 </html> 
+
+
+    <!-- FOOTER SECTION -->
+    <footer>
+        <div class="footerContainer">
+
+            <div class="icons">
+                <a href="https://www.youtube.com" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-instagram"></i></a>
+            </div>
+
+            <p>Diseño: Sistemas Hospital Santojanni </p>
+        </div>
+
+    </footer>
