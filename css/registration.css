@@ -96,6 +96,11 @@ body {
     box-shadow: inset 1px 1px 5px rgba(13, 110, 139, 0.5);
 }
 
+.formContainer .input:focus {
+background-color: #eaeaea;
+}
+
+
 
 
 .highlight {

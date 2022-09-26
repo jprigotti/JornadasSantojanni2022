@@ -67,10 +67,6 @@ $.ajax({
 
 //Esta funcion tiene un event listener sobre
 
-$(document).ready(function () {
-    console.log("ready!");
-
-});
 
 
 // var purchase = document.querySelector("#purchase");
@@ -93,7 +89,7 @@ setTimeout(function () {
             console.log(data);
 
 
-
+            //confirmRejectPurchase(data);
             //add the Ajax code to run the Google WebApp
 
             $.ajax({
@@ -105,13 +101,21 @@ setTimeout(function () {
                 data,
                 success: (list) => {
                     console.log(list);
-
+                    window.location.reload();
 
                 },
-                error: (err) => console.log(err)
+                error: (err) => {
+                    console.log(err);
+                    alert("Hubo un error, intentelo mas tarde");
+                }
             });
 
 
         });
     });
 }, 3000);
+
+
+function confirmRejectPurchase(data) {
+    //https://stackoverflow.com/questions/44213528/how-can-i-implement-a-wait-mechanism-until-receiving-confirm-dialog-response
+}

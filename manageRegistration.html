@@ -21,48 +21,45 @@
 
     <!-- Link to Bootstrap CDN -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-   
+
+
     <!-- FontAwesome -->
-<script src="https://kit.fontawesome.com/628afeffd4.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/628afeffd4.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
 
+    <div class="tableBackground">
+        <div class="tableContainer">
+            <h1>Listado de usuarios registrados</h1>
 
-<div class="tableContainer">
-    <h1>Listado de usuarios registrados</h1>
+            <table id="example" class="display compact">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Celular</th>
+                        <th>Email</th>
+                        <th>Servicio</th>
+                        <th>Estado</th>
 
-    <table id="example" class="stripe">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Celular</th>
-                <th>Email</th>
-                <th>Servicio</th>
-                <th>Estado</th>
+                    </tr>
+                </thead>
+            </table>
 
-            </tr>
-        </thead>
-    </table>
-
-
-<div class="searchPayContainer">
-    <h2>Agergar pago</h2>
-    <input type="button" id="purchaseBtn" value="Pagar">
-
-    <form class="searchForm" action="">
-        <label for="cell">Celular</label>
-        <input type="text" id="cell" name="cell" placeholder="Ingrese celular" >
-        <input type="submit" value="Buscar">
-    </form>
-</div>
-
-</div>
+        </div>
 
 
+        <div class="confirmPurchase">
 
+            <p>Confirma el pago de </p>
+            <input type="button" name="confirmPurchase" id="confirmPurchase" value="Confirma">
+            <input type="button" name="cancelPurchase" id="cancePurchase" value="Cancelar">
+        </div>
+
+
+    </div>
     <!-- Loading jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
@@ -72,23 +69,25 @@
     <script src="manageRegistration.js"></script>
 
     <!-- Link to datatables.net -->
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
 </body>
-</html> 
+
+</html>
 
 
-    <!-- FOOTER SECTION -->
-    <footer>
-        <div class="footerContainer">
+<!-- FOOTER SECTION -->
+<footer>
+    <div class="footerContainer">
 
-            <div class="icons">
-                <a href="https://www.youtube.com" target="_blank" rel="noopener">
-                    <i class="fa-brands fa-youtube"></i></a>
-                    <a href="https://www.instagram.com" target="_blank" rel="noopener">
-                        <i class="fa-brands fa-instagram"></i></a>
-            </div>
-
-            <p>Diseño: Sistemas Hospital Santojanni </p>
+        <div class="icons">
+            <a href="https://www.youtube.com" target="_blank" rel="noopener">
+                <i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener">
+                <i class="fa-brands fa-instagram"></i></a>
         </div>
 
-    </footer>
+        <p>Diseño: Sistemas Hospital Santojanni </p>
+    </div>
+
+</footer>
