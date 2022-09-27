@@ -30,10 +30,10 @@
 
 <body>
 
+    <!-- Codigo para la tabla -->
     <div class="tableBackground">
         <div class="tableContainer">
             <h1>Listado de usuarios registrados</h1>
-
             <table id="example" class="display compact">
                 <thead>
                     <tr>
@@ -43,19 +43,26 @@
                         <th>Email</th>
                         <th>Servicio</th>
                         <th>Estado</th>
-
                     </tr>
                 </thead>
             </table>
-
         </div>
 
+        <div class="confirmPaymentContainer">
+            <form id="confirmPayment" action="">
+                
+                <p>Confirma que desea enviar el Pago de: </p>
+                
+                <div class="inputArea">
+                    <input type="text" name="email" disabled>
+                </div>
 
-        <div class="confirmPurchase">
+                <div class="btnArea">
+                    <button class="btn btnSubmit" type="submit">Confirmar</button>
+                    <button class="btn btnReset" type="reset">Cancelar</button>
+                </div>
 
-            <p>Confirma el pago de </p>
-            <input type="button" name="confirmPurchase" id="confirmPurchase" value="Confirma">
-            <input type="button" name="cancelPurchase" id="cancePurchase" value="Cancelar">
+            </form>
         </div>
 
 
