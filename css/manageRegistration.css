@@ -1,6 +1,7 @@
 :root {
     --primary-color: rgba(13, 110, 139, 0.75);
     --overlay-color: rgba(24, 39, 51, 0.85);
+    --btn-background-gree: rgba(137, 190, 109, 1);
     --menu-speed: 0.75s;
 }
 

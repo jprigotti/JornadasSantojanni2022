@@ -10,6 +10,17 @@
     <!-- FONTAWESOME -->
     <script src="https://kit.fontawesome.com/628afeffd4.js" crossorigin="anonymous"></script>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@500&family=PT+Serif:ital,wght@1,700&family=Roboto:wght@100;300;400&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;1,300&display=swap"
+        rel="stylesheet">
+
 
     <!-- Link CSS local -->
     <link rel="stylesheet" href="./css/registration.css">
@@ -27,23 +38,35 @@
 
                 <div class="formContainer">
                     <div class="formHeader">
-                        <div>
-                            <h2 class="password">Complete los campos</h2>
-                        </div>
-                        <div><a href="index.html"><i class="fa-solid fa-door-open fa-2xl"></i></a></div>
+                        <h2>Registro</h2>
+                        <a href="index.html"><i class="fa-solid fa-door-open fa-xl"></i></a>
+                        <h3 class="password">Para registrarse, por favor completá la siguiente información</h2>
                     </div>
+                        <input id="inputFirstName" class="input w100" type="text" name="firstName" placeholder="Nombre">
+                        <span class="enterFirstName">Este campo es obligatorio</span>
 
-                    <input class="input w100" type="text" name="firstName" placeholder="Nombre" required>
-                    <input class="input w100" type="text" name="lastName" placeholder="Apellido" required>
-                    <input class="input w100" type="text" name="cell" placeholder="cell" required>
-                    <input class="input w100" type="email" name="email" placeholder="E-mail" required>
-                    <select class="input w100" type="text" name="servicios" id="formSelect" required>
+                        <input id="inputLastName" class="input w100" type="text" name="lastName" placeholder="Apellido">
+                        <span class="enterLastName">Este campo es obligatorio</span>
+
+                        <input id="inputCell" class="input w100" type="text" name="cell" placeholder="Cell" >
+                        <span class="enterCell">Este campo es obligatorio</span>
+
+                        <input id="inputEmail" class="input w100" type="text" name="email" placeholder="E-mail" >
+                        <span class="enterEmail">Este campo es obligatorio</span>
+                        <span class="wrongEmail">Debe ingresar un correo valido</span>
+
+                    <select class="input w100" type="text" name="servicio" id="formSelect" >
+                        <option value="Elegir" selected>Elegir Servicio...</option>
                     </select>
+                    <span class="enterServicio">Este campo es obligatorio</span>
                     <!-- <div class="passwordContainer">
                         <input class="input w100" type="password" name="password" placeholder="Contraseña"
                             id="passwordField">
                         <i class="fa-solid fa-eye-slash" id="showPassword"></i>
                     </div> -->
+                    <div class="warningMessage">
+                        <p>Hay errores que corregir</p>
+                    </div>
                     <div class="btnProgressArea">
                         <div class="btnArea">
                             <input class="btnWidth btn" type="submit" value="Enviar" id="formSubmit">
@@ -68,7 +91,8 @@
                     <h1>Registración exitosa!</h1>
                 </div>
 
-                <p>Para completar la inscripción deberás abonar en AMM 1er piso. Tenes tiempo hasta el 31 de octubre.</p>
+                <p>Para completar la inscripción deberás abonar en AMM 1er piso. Tenes tiempo hasta el 31 de octubre.
+                </p>
                 <p>Ya te enviamos:</p>
                 <ul>
                     <li><span><i class="fa-regular fa-envelope"></i></span> un e-mail de confirmación (recordá revisar
@@ -116,8 +140,8 @@
             <div class="icons">
                 <a href="https://www.youtube.com" target="_blank" rel="noopener">
                     <i class="fa-brands fa-youtube"></i></a>
-                    <a href="https://www.instagram.com" target="_blank" rel="noopener">
-                        <i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-instagram"></i></a>
             </div>
 
             <p>Diseño: Sistemas Hospital Santojanni </p>
