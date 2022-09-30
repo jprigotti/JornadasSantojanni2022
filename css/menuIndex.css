@@ -12,6 +12,18 @@
     height: 60px;
 }
 
+.menu-wrap .loginIcon{
+    position: absolute;
+    top: 1rem;
+    right: 3rem;
+    z-index: 1;
+
+}
+
+.menu-wrap .loginIcon a{
+color: #f4f4f4;
+
+} 
 
 .menu-wrap .toggler {
     position: absolute;
