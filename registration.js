@@ -1,8 +1,22 @@
-// CODIGO PARA GENERAR LOS OPTIONS DEL SELECT SERVICIOS
+const webApp_webFormSS = 'https://script.google.com/macros/s/AKfycbw3Sfjvn0F80pSlgw8inM9ZNqxT9TurI7SnEu3_OXx8seoZshBum_Erd5_0Uhdz7pf0MA/exec';
+const webApp_retrieveMedicalList = 'https://script.google.com/macros/s/AKfycbzQeIrYwMdcPIgQb7wZ9kX5_4ztb5jUEESf9CnAnmYw1DRGWn3sXUYdJ4IZjLbJSTmnww/exec';
+
+/***********************************************************************
+        EVENTS
+***********************************************************************/
+
+/***********************************************************************
+        Load form select options with data from SS
+************************************************************************
+When the page loads, this code sends a request to a specific Google
+WebApp to retrieve a list of "Servicios" that are appended to the
+form select options
+***********************************************************************/
+
 $.ajax({
     method: "get",
     redirect: "follow",
-    url: 'https://script.google.com/macros/s/AKfycbzQeIrYwMdcPIgQb7wZ9kX5_4ztb5jUEESf9CnAnmYw1DRGWn3sXUYdJ4IZjLbJSTmnww/exec',
+    url: webApp_retrieveMedicalList,
     dataType: 'json',
     accepts: 'application/json',
     success: (list) => {
@@ -24,19 +38,28 @@ $.ajax({
 });
 
 
-// CODIGO PARA EL SUBMIT DEL FORMULARIO DE INSCRIPCION
+/***********************************************************************
+        for submit
+************************************************************************
+This event has the for the form submit
+1. It reads all the input values using a foreach (ising name attribute)
+2. Creates a data object with the data from the input
+3. It calls validateInput(data) fuction and passes on the data object
+if return is:
+true: then we call insertUsersSS(url, method, data)
+false: nothing
+***********************************************************************/
+
 $('form.ajax').submit(function (evento) {
 
     evento.preventDefault();  // avoid to execute the actual submit of the form.
 
-    //ADD JS to valdate input data PENDING - then read the form inputs
     let that = $(this),
-        url = that.attr('action'),
-        method = that.attr('method'),
+        // url = that.attr('action'),
+        // method = that.attr('method'),
         data = {}; //this is gonna be a JS object to store all input values
 
     //loop through all the "name" items in the Form to load the data object
-
     that.find('[name]').each(function (index, value) {
         var that = $(this),
             name = that.attr('name'),
@@ -46,25 +69,30 @@ $('form.ajax').submit(function (evento) {
 
     console.log(data);
     //check if user is registered or not, runnig a query using AJAX-GET passing data object
-
-    (validateInput(data)) ? insertUserSS(url, method, data) : console.log("complete los campos");
-    
+    (validateInput(data)) ? insertUserSS(data) : console.log("complete los campos");
 
 });
 
 
+/***********************************************************************
+        FUNCTIONS
+***********************************************************************/
 
-// Local Functions
 
-// Esta funcion recibe un objecto data con todos los campos del usuario 
-// que envia a Google WebApp para insertarlo en el SS
-function insertUserSS(url, method, data) {
+/***********************************************************************
+        Function insertUserSS(data)
+************************************************************************
+This function receives the data object to insert in the SS
+We use the WebApp for webFormSS
+***********************************************************************/
+
+function insertUserSS(data) {
     processingRegistration(); //update the submit button to show progress
-    //Primero validamos que el usuario no este previamente registrado
+    //Primero validamos que el usuario no este previamente registrado con el metodo GET
     $.ajax({
         method: "get",
         redirect: "follow",
-        url: url,
+        url: webApp_webFormSS,
         dataType: 'json',
         accepts: 'application/json',
         data,
@@ -77,9 +105,9 @@ function insertUserSS(url, method, data) {
                 // User Not registered   
                 // Proceed to submit using AJAX-POST
                 $.ajax({
-                    method: method,
+                    method: 'post',
                     redirect: "follow",
-                    url: url,
+                    url: webApp_webFormSS,
                     dataType: 'json',
                     accepts: 'application/json',
                     data: data,
@@ -95,6 +123,14 @@ function insertUserSS(url, method, data) {
     });
 }
 
+
+/***********************************************************************
+        function processingRegistration() 
+************************************************************************
+This function does no need to receive any argument
+This code shows a progress bar o any other option to develop
+***********************************************************************/
+
 function processingRegistration() {
     // $("#formSubmit").val("Procesando...");
     $(".btn").css({ 'visibility': 'hidden' });
@@ -102,28 +138,33 @@ function processingRegistration() {
     updateProgressBar()
 }
 
+/*
+************************************************************************
+        function confirmRegistration()
+************************************************************************
+This function does no need to receive any argument
+This code shows a pop-up with a confirmation message
+************************************************************************
+*/
+
 function confirmRegistration() {
     clearInterval(myInterval); //Stop progress bar counter
     document.querySelector(".ajax").reset(); //clear all input form
     $(".btn").css({ 'visibility': 'visible' }); //make btnArea visible
     $(".progressBar").css({ 'visibility': 'hidden' }); //hide progress bar
     $('.alertNewUser').css({ 'visibility': 'visible' }); //make alrt new user pop-up visible
-    // $(".progressBar").toggleClass("successBar");
-    // setTimeout(function () {
-    //     $(".progressBar").toggleClass("successBar");
-    //     $(".btn").css({ 'visibility': 'visible' });
-    //     $(".progressBar").css({ 'visibility': 'hidden' });
-    // }, 3000);
-
-    // $("#formSubmit").val("Enviado");
-    // $("#formSubmit").addClass("btnSubmit");
-
-    // setTimeout(function () {
-    //     $("#formSubmit").val("Enviar");
-    //     $("#formSubmit").removeClass("btnSubmit");
-    //     $("#formSubmit").addClass("btn");
-    // }, 2000);
 }
+
+
+/*
+************************************************************************
+        function rejectRegistration()
+************************************************************************
+This function does no need to receive any argument
+This code shows a pop-up with a message stating that the user is
+already registered
+************************************************************************
+*/
 
 function rejectRegistration() {
     clearInterval(myInterval); //Stop progress bar counter
@@ -134,43 +175,50 @@ function rejectRegistration() {
     $(".progressBar").css({ 'visibility': 'hidden' });
 }
 
-//vlookupUse function receives two arguments
-// 1. is the URL of the Google WebApp
-// 2. is the string email we want to look for in the SS
-//Note: it uses the Get method, while the insert coding uses the Post method
-//if the Google Script does find the email in the table, returns vloookupResult : "true"
+/*
+************************************************************************
+        function vlookupUser(url, email) 
+************************************************************************
+This function receives two arguments:
+URL: of the Google WebApp (we assume GET method) and
+email: of the user we are looking for
 
-function vlookupUser(url, email) {
-    var result = true;
-    data = {};
-    data['email'] = email;
-    $.ajax({
-        method: "get",
-        redirect: "follow",
-        url: url,
-        dataType: 'json',
-        accepts: 'application/json',
-        data,
-        success: (status) => {
-            console.log("el valor de vlookupRsult es" + status['vlookupResult']);
-            if (status['vlookupResult'] === true) result = false;
-            console.log(result);
-        },
-        error: (err) => console.log(err)
-        // error: (err) => console.log("error"),
-    });
+This code connects to the Google WebApp and returns:
+true: if email was found
+false: if the email was not found
+************************************************************************
+*/
 
-    console.log(result);
-    if (result == true) {
-        console.log("true");
-        return true;
+// function vlookupUser(url, email) {
+//     var result = true;
+//     data = {};
+//     data['email'] = email;
+//     $.ajax({
+//         method: "get",
+//         redirect: "follow",
+//         url: url,
+//         dataType: 'json',
+//         accepts: 'application/json',
+//         data,
+//         success: (status) => {
+//             console.log("el valor de vlookupRsult es" + status['vlookupResult']);
+//             if (status['vlookupResult'] === true) result = false;
+//             console.log(result);
+//         },
+//         error: (err) => console.log(err)
+//     });
 
-    } else {
-        console.log("false");
-        return false;
+//     console.log(result);
+//     if (result == true) {
+//         console.log("true");
+//         return true;
 
-    }
-}
+//     } else {
+//         console.log("false");
+//         return false;
+
+//     }
+// }
 
 
 //This functions will show/hide the password
@@ -234,9 +282,18 @@ $('#alertContainerCloseRU').on('mousedown', function () {
 
 
 
+/***********************************************************************
+        Function validateInput(data)
+************************************************************************
+This function receives an data object
+then for each empty argument, it highlight the associated input
+We use an arrayCheck that stores false for each empty objet attribute
+if arraycheck.some(item==fase) returs false - fail,
+otherise return true - OK
+***********************************************************************/
 
 function validateInput(data) {
-    console.log(data);
+    // console.log(data);
     var arrayCheck = [];
     //Validamos el input FirstName
     if (data.firstName == "") {
