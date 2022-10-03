@@ -83,6 +83,8 @@ $('#confirmPayment').submit(function (evento) {
         console.log(data);
     });
 
+    processingPurchase();
+
     $.ajax({
         method: "post",
         redirect: "follow",
@@ -91,11 +93,12 @@ $('#confirmPayment').submit(function (evento) {
         accepts: 'application/json',
         data,
         success: (list) => {
-            console.log(list);
-            document.querySelector("#confirmPayment").reset(); //clear all input form
-            $('.confirmPaymentBackground').css({ 'display': 'none' });
-            alert("Pago confirmado! Hemos enviado al usuario un correo de confirmación.")
-            reInitializeDataTable();
+            confirmPurchase();
+            // console.log(list);
+            // document.querySelector("#confirmPayment").reset(); //clear all input form
+            // $('.confirmPaymentBackground').css({ 'display': 'none' });
+            // alert("Pago confirmado! Hemos enviado al usuario un correo de confirmación.")
+            // reInitializeDataTable();
         },
         error: (err) => {
             console.log(err);
@@ -284,5 +287,64 @@ function updatePaymentStatus(email) {
 }
 
 
+
+/***********************************************************************
+        Function processingPurchase()
+************************************************************************
+This function has to:
+
+***********************************************************************/
+function processingPurchase() {
+    $(".btnArea").css({ 'display': 'none' });
+    $(".progressBar").css({ 'display': 'inline' });
+    updateProgressBar();
+}
+
+
+
+/***********************************************************************
+        Function processingPurchase()
+************************************************************************
+This function has to:
+
+***********************************************************************/
+function updateProgressBar() {
+    const progressBar = document.getElementsByClassName('progressBar')[0]
+    const loop = 3;
+    progressBar.style.setProperty('--width', 0)
+    myInterval = setInterval(() => {
+        const computedStyle = getComputedStyle(progressBar)
+        let width = parseFloat(computedStyle.getPropertyValue('--width')) || 0
+        progressBar.style.setProperty('--width', width + 1)
+        if (width == 95) {
+            progressBar.style.setProperty('--width', 0)
+            // clearInterval(myInterval);
+        }
+        console.log(width);
+    }, 30)
+}
+
+/***********************************************************************
+        Function confirmPurchase()
+************************************************************************
+This function has to:
+
+***********************************************************************/
+
+function confirmPurchase() {
+    clearInterval(myInterval); //Stop progress bar counter
+    reInitializeDataTable();
+
+    $(".progressBar").css({ 'display': 'none' }); //hide progress bar
+    $(".paymentSuccessfullMessage").css({ 'display': 'inline' });
+
+    setInterval(function () {
+        document.querySelector("#confirmPayment").reset(); //clear all input form //clear all input form
+        $('.confirmPaymentBackground').css({ 'display': 'none' });
+        $(".btnArea").css({ 'display': 'all' });
+
+    }, 5000);
+
+}
 
 
