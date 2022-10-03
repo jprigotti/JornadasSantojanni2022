@@ -114,6 +114,7 @@ function insertUserSS(data) {
                     success: (result) => {
                         console.log(result);
                         confirmRegistration();
+
                     },
                     error: (err) => console.log(err)
                 });
@@ -258,6 +259,7 @@ function updateProgressBar() {
 //Este codigo es para cerrar el alertContainer NewUser
 $('#alertContainerCloseNU').on('mousedown', function () {
     $('.alertNewUser').css({ 'visibility': 'hidden' });
+    window.location.replace("index.html");;
 });
 
 //Este codigo es para cerrar el alertContainer RegisteredUser
