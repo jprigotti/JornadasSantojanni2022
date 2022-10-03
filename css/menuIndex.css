@@ -12,7 +12,7 @@
     height: 60px;
 }
 
-.menu-wrap .loginIcon{
+.menu-wrap .loginIcon {
     position: absolute;
     top: 1rem;
     right: 3rem;
@@ -20,10 +20,22 @@
 
 }
 
-.menu-wrap .loginIcon a{
-color: #f4f4f4;
+.menu-wrap .loginIcon a {
+    color: #f4f4f4;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
 
-} 
+.menu-wrap .loginIcon a:hover {
+   opacity: 0.7;
+}
+
+.menu-wrap .loginIcon a::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f007";
+    padding-left: 0.5rem;
+}
 
 .menu-wrap .toggler {
     position: absolute;
@@ -35,6 +47,8 @@ color: #f4f4f4;
     height: 50px;
     opacity: 0;
 }
+
+
 
 .menu-wrap .hamburguer {
     position: absolute;
@@ -51,7 +65,7 @@ color: #f4f4f4;
 }
 
 /* Navbar */
-.navBar{
+.navBar {
     /* height: 100%; */
     background-image: linear-gradient(var(--overlay-color), var(--primary-color));
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
@@ -112,24 +126,24 @@ color: #f4f4f4;
 /* Rotate on hover when checked */
 .menu-wrap .toggler:hover+.hamburguer>div:before,
 .menu-wrap .toggler:hover+.hamburguer>div:after {
-    top:0;
+    top: 0;
     transition: all 0.2s ease-out;
 }
 
 
 /* Show Menu */
 
-.menu-wrap .toggler:checked ~ .menu{
+.menu-wrap .toggler:checked~.menu {
     visibility: visible;
 }
 
-.menu-wrap .toggler:checked ~ .menu > div{
+.menu-wrap .toggler:checked~.menu>div {
     transform: scale(1);
     transition-duration: var(--menu-speed);
 }
 
 
-.menu-wrap .menu{
+.menu-wrap .menu {
     position: fixed;
     top: 0;
     left: 0;
@@ -143,9 +157,9 @@ color: #f4f4f4;
 }
 
 
-.menu-wrap .menu > div{
+.menu-wrap .menu>div {
     background: var(--overlay-color);
-    border-radius:50%;
+    border-radius: 50%;
     width: 200vw;
     height: 200vh;
     display: flex;
@@ -157,16 +171,15 @@ color: #f4f4f4;
     transform: all 0.4s ease;
 }
 
-.menu-wrap .menu > div > ul > li{
-list-style: none;
-color: white;
-font-size: 1.5rem;
-padding: 1rem;
+.menu-wrap .menu>div>ul>li {
+    list-style: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 1rem;
 }
 
-.menu-wrap .menu > div > ul > li > a{
+.menu-wrap .menu>div>ul>li>a {
     color: inherit;
     text-decoration: none;
     transition: color 0.4s ease;
 }
-
