@@ -31,7 +31,10 @@
                 </div>
                 <div class="formBody">
                     <input type="text" name="username" class="input" id="username" placeholder="Usuario">
-                    <input type="text" name="password" class="input" id="password" placeholder="Constraseña">
+                    <div class="passwordContainer">
+                        <input type="password" name="password" class="input" id="password" placeholder="Constraseña">
+                        <i class="fa-solid fa-eye-slash" id="showPassword"></i>
+                    </div>
                     <div class="invalidCredentials">
                         <p>Usuario y/o contraseña invalidos</p>
                     </div>

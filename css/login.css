@@ -83,6 +83,27 @@ body {
     outline: 2px solid var(--btn-background-green);
 }
 
+.formBody .passwordContainer {
+    width: 100%;
+    position: relative;
+}
+
+#showPassword {
+    cursor: pointer;
+}
+
+.fa-eye {
+    position: absolute;
+    top: 40%;
+    right: 5%;
+}
+
+.fa-eye-slash {
+    position: absolute;
+    top: 40%;
+    right: 5%;
+}
+
 .formBody .invalidCredentials {
     display: none;
     color: #F6E019;
@@ -128,8 +149,7 @@ Codigo CSS para el DIV tableBackground
 }
 
 #example tr,
-#example th {
-    text-align: center;
+#example > th {
 }
 
 .tableContainer .stripe {
@@ -218,7 +238,6 @@ input {
     margin: 1rem;
     display: flex;
     justify-content: space-around;
-    display: all;
 }
 
 .btnArea .btn {

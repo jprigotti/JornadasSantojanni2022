@@ -61,8 +61,7 @@ $('#login').submit(function (evento) {
 /***********************************************************************
         Al hacer click en el boton Confirmar del payment
 ************************************************************************
-When click on submit, we retrieve username and password from input
-and compare with harcodede credentials
+
 ***********************************************************************/
 
 $('#confirmPayment').submit(function (evento) {
@@ -116,6 +115,20 @@ $('#confirmPayment').submit(function (evento) {
 ***********************************************************************/
 $('.btnReset').click(function () {
     $('.confirmPaymentBackground').css({ 'display': 'none' });
+});
+
+
+
+/***********************************************************************
+        Al hacer click en el icono del password
+************************************************************************
+
+***********************************************************************/
+
+$('#showPassword').click(function () {
+    $(this).toggleClass("fa-eye");
+    const type = password.getAttribute("type") === "password" ? "text" : "password";
+    password.setAttribute("type", type);
 });
 
 /***********************************************************************
@@ -184,18 +197,33 @@ function initializeDataTable() {
             for (row = 0; row < list.length; row++) {
                 if (list[row][6] == "NO") {
                     // var user = { Nombre: list[row][0], Apellido: list[row][1], Celular: list[row][2], Email: list[row][3], Servicio: list[row][4], Pago: '<a href="#" name=' + list[row][3] + ' class="purchase"><i class="fa-solid fa-cart-shopping"></i></a>' };
+                    var regDate = list[row][0];
+                    var payDate = list[row][7];
                     var user = {
-                        Fecha_Reg: list[row][0],
+                        Fecha_Reg: regDate.substr(0, 10),
                         Nombre: list[row][1],
                         Apellido: list[row][2],
                         Celular: list[row][3],
                         Email: list[row][4],
                         Servicio: list[row][5],
                         Abono: list[row][6],
+                        Fecha_Pago: payDate.substr(0, 10),
                         Estado: '<button class="btnCart" onclick="updatePaymentStatus(\'' + list[row][4] + '\')"><i class="fa-solid fa-cart-shopping"></i></button>'
                     };
                 } else {
-                    var user = { Fecha_Reg: list[row][0], Nombre: list[row][1], Apellido: list[row][2], Celular: list[row][3], Email: list[row][4], Servicio: list[row][5], Abono: list[row][6], Estado: '<i class="fa-regular fa-circle-check"></i>' };
+                    var regDate = list[row][0];
+                    var payDate = list[row][7];
+                    var user = {
+                        Fecha_Reg: regDate.substr(0, 10),
+                        Nombre: list[row][1],
+                        Apellido: list[row][2],
+                        Celular: list[row][3],
+                        Email: list[row][4],
+                        Servicio: list[row][5],
+                        Abono: list[row][6],
+                        Fecha_Pago: payDate.substr(0, 10),
+                        Estado: '<i class="fa-regular fa-circle-check"></i>'
+                    };
                 }
 
                 userArray.push(user); //incorporamos el objeto al final de array con el metodo push()
@@ -223,6 +251,8 @@ function initializeDataTable() {
             var cell = row.insertCell(6);
             cell.innerHTML = "<b>Abono</b>";
             var cell = row.insertCell(7);
+            cell.innerHTML = "<b>Fecha_pago</b>";
+            var cell = row.insertCell(8);
             cell.innerHTML = "<b>Estado</b>";
 
 
@@ -236,6 +266,7 @@ function initializeDataTable() {
                     { data: 'Email' },
                     { data: 'Servicio' },
                     { data: 'Abono' },
+                    { data: 'Fecha_Pago' },
                     { data: 'Estado' }
                 ],
             });
@@ -338,13 +369,17 @@ function confirmPurchase() {
     $(".progressBar").css({ 'display': 'none' }); //hide progress bar
     $(".paymentSuccessfullMessage").css({ 'display': 'inline' });
 
-    setInterval(function () {
+    setTimeout(function () {
         document.querySelector("#confirmPayment").reset(); //clear all input form //clear all input form
+        $(".paymentSuccessfullMessage").css({ 'display': 'none' });
+        $(".btnArea").css({ 'display': 'flex' });
         $('.confirmPaymentBackground').css({ 'display': 'none' });
-        $(".btnArea").css({ 'display': 'all' });
 
-    }, 5000);
+    }, 3000);
 
 }
+
+
+
 
 
