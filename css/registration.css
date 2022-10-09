@@ -24,6 +24,10 @@ body {
     line-height: 1.2;
 }
 
+body a{
+    text-decoration: none;
+}
+
 /* Styling for FORM Section */
 
 .formBackground {
@@ -62,7 +66,7 @@ body {
 
 .formHeader h2 {
     grid-row: 1;
-    grid-column: 2/6;
+    grid-column: 2/5;
     font-size: 2rem;
     color: #f4f4f4;
     font-weight: 600;
@@ -156,25 +160,25 @@ body {
 .enterCell,
 .enterEmail,
 .enterServicio,
-.wrongEmail{
-font-size: 0.9rem;
-color: #F6E019;
-visibility: hidden;
+.wrongEmail {
+    font-size: 0.9rem;
+    color: #F6E019;
+    visibility: hidden;
 }
 
-.inputError{
+.inputError {
     border: 2px solid #F6E019 !important;
 }
 
-.warningMessage{
+.warningMessage {
     width: 100%;
     border-radius: 5px;
     margin-top: 1rem;
-    background-color: rgba(246, 55, 25,0.5);
+    background-color: rgba(246, 55, 25, 0.5);
     display: none;
 }
 
-.warningMessage p{
+.warningMessage p {
     font-size: 1rem;
     padding: 1rem;
     color: #f4f4f4;
@@ -299,6 +303,23 @@ visibility: hidden;
     bottom: 10px;
     right: 20px;
     font-size: 0.8rem;
+}
+
+
+/* Código para el texto de ayuda que linkea al form de Consultas */
+
+
+.registrationHelp{
+    width: 100%;
+    font-size: 0.9rem;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.registrationHelp a{
+    font-size: 1rem;
+    color: #f4f4f4;
+    font-weight: 300;
 }
 
 
