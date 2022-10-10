@@ -183,6 +183,67 @@
 
 
 
+/* BOTTOM NAVBAR */
+.bottomNav {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #f0f0f0;
+    z-index: 1;
+    display: none;
+}
+
+.navContainer {
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.navContainer>div {
+    text-align: center;
+}
+
+.navContainer p {
+    font-size: 0.7rem;
+}
+
+
+.navContainer .material-symbols-outlined {
+    margin: 0;
+    vertical-align: bottom;
+    color: var(--overlay-color);
+}
+
+
+
+.navIcon {
+    border: 1px solid var(--overlay-color);
+    padding: 0.5rem;
+    margin: 0;
+    border-radius: 5px;
+    color: var(--overlay-color);
+}
+
+
+
+.navIcon a {
+    text-decoration: none;
+    color: var(--primary-color);
+
+}
+
+.navIcon a:hover {
+    background-color: #a0a0a0;
+
+}
+
+
+
 /* **********************************************
                 MEDIA QUERIES
 ********************************************** */
@@ -192,5 +253,9 @@
 @media(max-width:576px) {
     .menu-wrap .loginIcon a::after {
         content: '';
+    }
+
+    .bottomNav {
+        display: inline-flex;
     }
 }

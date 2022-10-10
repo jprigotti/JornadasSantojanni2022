@@ -176,6 +176,7 @@ div > span {
     background-color: #182733;
     color: #f4f4f4;
     padding: 1rem;
+    display: inline-flex;
 }
 
 .footerContainer .icons {
@@ -212,3 +213,19 @@ div > span {
 }
 
 }
+
+
+
+
+/* **********************************************
+                MEDIA QUERIES
+********************************************** */
+
+@media(max-width:576px) {
+    .footerContainer {
+
+        display: none;
+    }
+}
+
+
