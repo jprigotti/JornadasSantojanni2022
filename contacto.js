@@ -94,7 +94,8 @@ function inputValidate() {
     };
 
     if (document.getElementsByName('message')[0].value == "") {
-        document.querySelector('#messageAlert').textContent = "Campo requerido"
+        document.querySelector('#messageAlert').textContent = "Campo requerido";
+        document.querySelector('#inputMessage').classList.add('inputFieldAlert');
         arrayCheck.push('false');
     } else {
         document.querySelector('#messageAlert').textContent = ""
