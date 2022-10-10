@@ -30,13 +30,15 @@ body {
     height: 100vh;
     /* background-color: var(--primary-color); */
     background-image: linear-gradient(rgba(13, 110, 139, 0.2), rgba(13, 110, 139, 0.2)), url("../img/backgroundRegistration.jpg");
-
-    padding: 1rem;
+    position: relative;
+    top: 0;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
 }
 
 .loginContainer {
+    margin: 0 auto;;
     width: 350px;
-    margin: 5rem auto 0 auto;
     padding: 1.5rem;
     background-color: #f4f4f4;
     text-align: center;
