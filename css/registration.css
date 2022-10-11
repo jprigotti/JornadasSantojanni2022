@@ -114,9 +114,10 @@ body a{
     outline: none;
     border: none;
     border-radius: 5px;
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: #3c3c3d;
     background-color: #ddd;
+    font-family: "Poppins", sans-serif;
     /* box-shadow: inset 1px 1px 5px rgba(13, 110, 139, 0.5); */
 }
 

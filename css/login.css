@@ -75,7 +75,8 @@ body {
     outline: none;
     border: none;
     border-radius: 5px;
-    font-size: 1.3rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
     color: #3c3c3d;
     background-color: #ddd;
 }
@@ -140,14 +141,16 @@ Codigo CSS para el DIV tableBackground
 .tableBackground {
     display: none;
     padding-top: 5rem;
+    height: 100vh;
 }
 
 
 .tableContainer {
-    max-width: 80%;
+    max-width: 1200px;
+    min-height: 100vh;
     margin: 0 auto;
     overflow-x: visible;
-    margin-top: 3rem;
+    padding-top: 3rem;
 }
 
 #example tr,
@@ -165,7 +168,7 @@ Codigo CSS para el DIV tableBackground
     padding: 1rem;
     color: #f4f4f4;
     text-align: center;
-
+font-weight: 600;
     background-color: var(--primary-color);
 }
 
@@ -183,6 +186,13 @@ Codigo CSS para el DIV tableBackground
     padding: 0.1rem;
     color: green;
 }
+
+#example_paginate{
+
+    display: flex;
+    font-size: 1rem;
+}
+
 
 /* ************************************************
 Codigo CSS para el DIV confirmPaymentContainer
