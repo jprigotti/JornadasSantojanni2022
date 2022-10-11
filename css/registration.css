@@ -64,7 +64,7 @@ body a{
     grid-template-rows: 2;
     grid-template-columns: 1fr 5fr 1fr;
     gap: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .formHeader h2 {
