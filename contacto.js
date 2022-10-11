@@ -121,25 +121,25 @@ $('.containerClose').click(function(){
 });
 
 
-$('#inputFirstName').on('keypress', function(e){
+$('#inputFirstName').on('change', function(e){
     document.querySelector('#firstNameAlert').textContent = "";
     document.querySelector('#inputFirstName').classList.remove('inputFieldAlert');
     $('.messageArea').css({ 'display': 'none' });
 });
 
-$('#inputLastName').on('keypress', function(e){
+$('#inputLastName').on('change', function(e){
     document.querySelector('#lastNameAlert').textContent = "";
     document.querySelector('#inputLastName').classList.remove('inputFieldAlert');
     $('.messageArea').css({ 'display': 'none' });
 });
 
-$('#inputEmail').on('keypress', function(e){
+$('#inputEmail').on('change', function(e){
     document.querySelector('#emailAlert').textContent = "";
     document.querySelector('#inputEmail').classList.remove('inputFieldAlert');
     $('.messageArea').css({ 'display': 'none' });
 });
 
-$('#inputMessage').on('keypress', function(e){
+$('#inputMessage').on('change', function(e){
     document.querySelector('#messageAlert').textContent = "";
     document.querySelector('#inputMessage').classList.remove('inputFieldAlert');
     $('.messageArea').css({ 'display': 'none' });
