@@ -26,7 +26,7 @@ body {
 .contactBackground {
     background-image: linear-gradient(rgba(13, 110, 139, 0.2), rgba(13, 110, 139, 0.2)), url("../img/backgroundRegistration.jpg");
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
     top: 0;
     padding-top: 5rem;
