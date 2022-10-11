@@ -299,56 +299,71 @@ function validateInput(data) {
     var arrayCheck = [];
     //Validamos el input FirstName
     if (data.firstName == "") {
-        $('.enterFirstName').css({ 'visibility': 'visible' });
+        // $('.enterFirstName').css({ 'visibility': 'visible' });
         $('#inputFirstName').addClass('inputError');
+        document.querySelector('#firstNameAlert').textContent = "Campo requerido";
         arrayCheck.push(false);
     } else {
-        $('.enterFirstName').css({ 'visibility': 'hidden' });
+        // $('.enterFirstName').css({ 'visibility': 'hidden' });
         $('#inputFirstName').removeClass('inputError');
+        document.querySelector('#firstNameAlert').textContent = "";
         arrayCheck.push(true)
     }
 
     //validamos el input LastName
     if (data.lastName == "") {
-        $('.enterLastName').css({ 'visibility': 'visible' });
+        // $('.enterLastName').css({ 'visibility': 'visible' });
         $('#inputLastName').addClass('inputError');
+        document.querySelector('#lastNameAlert').textContent = "Campo requerido";
         arrayCheck.push(false);
     } else {
-        $('.enterLastName').css({ 'visibility': 'hidden' });
+        // $('.enterLastName').css({ 'visibility': 'hidden' });
         $('#inputLastName').removeClass('inputError');
+        document.querySelector('#lastNameAlert').textContent = "";
         arrayCheck.push(true);
     }
 
     //validamos el input Cell
     if (data.cell == "") {
-        $('.enterCell').css({ 'visibility': 'visible' });
+        // $('.enterCell').css({ 'visibility': 'visible' });
         $('#inputCell').addClass('inputError');
+        document.querySelector('#cellAlert').textContent = "Campo requerido";
         arrayCheck.push(false);
     } else {
-        $('.enterCell').css({ 'visibility': 'hidden' });
+        // $('.enterCell').css({ 'visibility': 'hidden' });
         $('#inputCell').removeClass('inputError');
+        document.querySelector('#cellAlert').textContent = "";
         arrayCheck.push(true);
     }
 
     //validamos el input Email
     if (data.email == "") {
-        $('.enterEmail').css({ 'visibility': 'visible' });
+        // $('.enterEmail').css({ 'visibility': 'visible' });
         $('#inputEmail').addClass('inputError');
+        document.querySelector('#emailAlert').textContent = "Campo requerido";
         arrayCheck.push(false);
-    } else {
-        $('.enterEmail').css({ 'visibility': 'hidden' });
+    } else if (data.email.includes('@')==false){
+        // $('.enterEmail').css({ 'visibility': 'visible' });
+        $('#inputEmail').addClass('inputError');
+        document.querySelector('#emailAlert').textContent = "Correo inválido";
+        arrayCheck.push(false);
+    }else{ 
+        // $('.enterEmail').css({ 'visibility': 'hidden' });
         $('#inputEmail').removeClass('inputError');
+        document.querySelector('#emailAlert').textContent = "";
         arrayCheck.push(true);
     }
 
     //validamos el input Servicio
     if (data.servicio == "Elegir") {
-        $('.enterServicio').css({ 'visibility': 'visible' });
+        // $('.enterServicio').css({ 'visibility': 'visible' });
         $('#formSelect').addClass('inputError');
+        document.querySelector('#servicioAlert').textContent = "Campo requerido";
         arrayCheck.push(false);
     } else {
-        $('.enterServicio').css({ 'visibility': 'hidden' });
+        // $('.enterServicio').css({ 'visibility': 'hidden' });
         $('#formSelect').removeClass('inputError');
+        document.querySelector('#servicioAlert').textContent = "";
         arrayCheck.push(true);
     }
 
@@ -363,38 +378,43 @@ function validateInput(data) {
 }
 
 
-$('#inputFirstName').on('keypress', function(e){
+$('#inputFirstName').on('change', function(e){
     console.log("input first name changed");
-    $('.enterFirstName').css({ 'visibility': 'hidden' });
+    // $('.enterFirstName').css({ 'visibility': 'hidden' });
     $('#inputFirstName').removeClass('inputError');
+    document.querySelector('#firstNameAlert').textContent = "";
     $('.warningMessage').css({ 'display': 'none' });
 })
 
-$('#inputLastName').on('keypress', function(e){
+$('#inputLastName').on('change', function(e){
     console.log("input first name changed");
-    $('.enterLastName').css({ 'visibility': 'hidden' });
+    // $('.enterLastName').css({ 'visibility': 'hidden' });
     $('#inputLastName').removeClass('inputError');
+    document.querySelector('#lastNameAlert').textContent = "";
     $('.warningMessage').css({ 'display': 'none' });
 })
 
 $('#inputCell').on('keypress', function(e){
     console.log("input first name changed");
-    $('.enterCell').css({ 'visibility': 'hidden' });
+    // $('.enterCell').css({ 'visibility': 'hidden' });
     $('#inputCell').removeClass('inputError');
+    document.querySelector('#cellAlert').textContent = "";
     $('.warningMessage').css({ 'display': 'none' });
 })
 
 $('#inputEmail').on('keypress', function(e){
     console.log("input first name changed");
-    $('.enterEmail').css({ 'visibility': 'hidden' });
+    // $('.enterEmail').css({ 'visibility': 'hidden' });
     $('#inputEmail').removeClass('inputError');
+    document.querySelector('#emailAlert').textContent = "";
     $('.warningMessage').css({ 'display': 'none' });
 })
 
 $('#formSelect').on('change', function(e){
     console.log("input first name changed");
-    $('.enterServicio').css({ 'visibility': 'hidden' });
+    // $('.enterServicio').css({ 'visibility': 'hidden' });
     $('#inputServicio').removeClass('inputError');
+    document.querySelector('#servicioAlert').textContent = "";
     $('.warningMessage').css({ 'display': 'none' });
 })
 

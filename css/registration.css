@@ -2,6 +2,7 @@
     --primary-color: rgba(13, 110, 139, 0.75);
     --overlay-color: rgba(24, 39, 51, 0.85);
     --btn-background-green: rgba(137, 190, 109, 1);
+    --warning-color: #F6E019;
 }
 
 
@@ -171,6 +172,15 @@ body a{
 
 .inputError {
     border: 2px solid #F6E019 !important;
+}
+
+
+.inputAlert {
+    display: block;
+    font-size: 0.8rem;
+    padding: 0.25rem 1rem;
+    color: var(--warning-color);
+    /* visibility: hidden; */
 }
 
 .warningMessage {

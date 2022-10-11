@@ -85,22 +85,27 @@
                         <h3 class="password">Para inscribirte, por favor completá la siguiente información</h2>
                     </div>
                         <input id="inputFirstName" class="input w100" type="text" name="firstName" placeholder="Nombre">
-                        <span class="enterFirstName">Este campo es obligatorio</span>
+                        <!-- <span class="enterFirstName">Este campo es obligatorio</span> -->
+                        <span id="firstNameAlert" class="inputAlert"></span>
 
                         <input id="inputLastName" class="input w100" type="text" name="lastName" placeholder="Apellido">
-                        <span class="enterLastName">Este campo es obligatorio</span>
+                        <!-- <span class="enterLastName">Este campo es obligatorio</span> -->
+                        <span id="lastNameAlert" class="inputAlert"></span>
 
                         <input id="inputCell" class="input w100" type="text" name="cell" placeholder="Cell" >
-                        <span class="enterCell">Este campo es obligatorio</span>
+                        <!-- <span class="enterCell">Este campo es obligatorio</span> -->
+                        <span id="cellAlert" class="inputAlert"></span>
 
                         <input id="inputEmail" class="input w100" type="text" name="email" placeholder="E-mail" >
-                        <span class="enterEmail">Este campo es obligatorio</span>
-                        <span class="wrongEmail">Debe ingresar un correo valido</span>
+                        <span id="emailAlert" class="inputAlert"></span>
+                        <!-- <span class="enterEmail">Este campo es obligatorio</span> -->
+                        <!-- <span class="wrongEmail">Debe ingresar un correo valido</span> -->
 
                     <select class="input w100" type="text" name="servicio" id="formSelect" >
                         <option value="Elegir" selected>Elegir Servicio...</option>
                     </select>
-                    <span class="enterServicio">Este campo es obligatorio</span>
+                    <!-- <span class="enterServicio">Este campo es obligatorio</span> -->
+                    <span id="servicioAlert" class="inputAlert"></span>
                     <!-- <div class="passwordContainer">
                         <input class="input w100" type="password" name="password" placeholder="Contraseña"
                             id="passwordField">
