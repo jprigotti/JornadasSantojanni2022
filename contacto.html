@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CSS Locas -->
+    <link rel="stylesheet" href="./css/utilities.css">
+    <link rel="stylesheet" href="./css/menuIndex.css">
+    <link rel="stylesheet" href="./css/styleIndex.css">
+
+    <!-- FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/628afeffd4.js" crossorigin="anonymous"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;1,300&display=swap"
+    rel="stylesheet">
+
+      <!-- Google icons -->
+      <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
+</head>
+
+<body>
+
+        <!-- HEADER SECTION     -->
+
+        <div class="menu-wrap">
+            <div class="loginIcon">
+                <a href="login.html" target="_blank"><i class="fa-solid fa-user"></i></a>
+            </div>
+            <input type="checkbox" class="toggler">
+            <div class="hamburguer">
+                <div></div>
+            </div>
+            <div class="menu">
+                <div>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="programa.html">Programa</a></li>
+                        <li><a href="registration.html">Inscripción</a></li>
+                        <li><a href="contacto.html">Consultas</a></li>
+                        <li><a href="#">Nosotros</a></li>
+    
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="menuDesktop">
+                <div class="menuDesktopContainer">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="programa.html">Programa</a></li>
+                        <li><a href="registration.html">Inscripción</a></li>
+                        <li><a href="contacto.html">Consultas</a></li>
+                        <li><a href="#">Nosotros</a></li>
+    
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+                <!-- MAIN SECTION     -->
+    <div class="contactBackground">
+
+        <form id="formContact" action="">
+            <div class="formContainer">
+
+                <div class="formHeader">
+                    <h2>Consultas</h2>
+                    <a href="index.html"><i class="fa-solid fa-door-open fa-xl"></i></a>
+                    <h3>Completa los siguientes campos y envianos tu consulta</h3>
+                </div>
+
+                <div class="formBody">
+
+                    <div class="inputRow">
+                        <input id="inputFirstName" class="inputField" type="text" name="firstName" placeholder="Nombre">
+                        <span id="firstNameAlert" class="inputAlert"></span>
+                    </div>
+                    <div class="inputRow">
+                        <input id="inputLastName" class="inputField" type="text" name="lastName" placeholder="Apellido">
+                        <span id="lastNameAlert" class="inputAlert"></span>
+                    </div>
+                    <div class="inputRow">
+                        <input id="inputEmail" class="inputField" type="text" name="email" placeholder="Correo electrónico">
+                        <span id="emailAlert" class="inputAlert"></span>
+                    </div>
+                    <div class="inputRow">
+                        <textarea id="inputMessage" class="inputField" name="message" id="" cols="30" rows="3"
+                            placeholder="Ingrese su consulta"></textarea>
+                        <span id="messageAlert" class="inputAlert"></span>
+                    </div>
+
+                </div>
+
+                <div class="formFooter">
+                    <div class="messageArea">
+                        <p>Hay campos que revisar</p>
+                    </div>
+                    <div class="btnArea">
+                        <input class="btn" type="submit" id="submit" value="Enviar">
+                    </div>
+
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <div class="popupWindow">
+        <div class="container">
+
+            <div class="containerHeader">
+                
+                <h1><span><i class="fa-solid fa-user-doctor"></i></span>  Consulta enviada!</h1>
+                <i class="fa-solid fa-circle-xmark fa-xl containerClose" id="containerClose"></i>
+            </div>
+
+            <div class="containerBody">
+                <br>
+                <p>Te enviamos un correo de confirmación.</p>
+                <br>
+                <p>Te responderemos a la brevedad,</p>
+                <p>muchas gracias.</p>
+            </div>
+        </div>
+    </div>
+
+
+   <!-- BOTTOM NAVBAR -->
+   <nav class="bottomNav">
+    <div class="navContainer">
+        <div class="navHome">
+            <a href="index.html"><span class="material-symbols-outlined">
+                    home
+                </span></a><p>Inicio</p>
+        </div>
+        <div class="navAgenda">
+            <a href="programa.html"><span class="material-symbols-outlined">
+                    event_upcoming
+                </span></a><p>Agenda</p>
+        </div>
+        <div class="navRegistration">
+            <a href="registration.html"><span class="material-symbols-outlined">
+                app_registration
+            </span></a><p>Registro</p>
+        </div>
+        <div class="navContacto">
+            <a href="contacto.html"><span class="material-symbols-outlined">
+                contact_support
+            </span></a><p>Consultas</p>
+        </div>
+
+        </div>
+    </div>
+</nav>
+
+
+   <!-- FOOTER SECTION -->
+   <footer>
+    <div class="footerContainer">
+
+        <div class="icons">
+            <a href="https://www.youtube.com" target="_blank" rel="noopener">
+                <i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener">
+                <i class="fa-brands fa-instagram"></i></a>
+        </div>
+
+        <p>Diseño: Sistemas Hospital Santojanni </p>
+    </div>
+
+</footer>
+
+
+    <!-- Loading jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Loading local JS -->
+    <script src="contacto.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jornadas Cientificas 2022</title>
+
+    <!-- Link CSS local -->
+    <link rel="stylesheet" href="./css/manageRegistration.css">
+    <link rel="stylesheet" href="./css/styleIndex.css">
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@500&family=PT+Serif:ital,wght@1,700&family=Roboto:wght@100;300;400&display=swap"
+        rel="stylesheet">
+
+    <!-- Link to Bootstrap CDN -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/628afeffd4.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <!-- Codigo para la tabla -->
+    <div class="tableBackground">
+        
+        <div class="tableContainer">
+            <h1>Listado de usuarios registrados</h1>
+            <table id="example" class="display compact">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Celular</th>
+                        <th>Email</th>
+                        <th>Servicio</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+        <div class="confirmPaymentContainer">
+            <form id="confirmPayment" action="">
+                
+                <p>Confirma que desea enviar el Pago de: </p>
+                
+                <div class="inputArea">
+                    <input type="text" name="email" disabled>
+                </div>
+
+                <div class="btnArea">
+                    <button class="btn btnSubmit" type="submit">Confirmar</button>
+                    <button class="btn btnReset" type="reset">Cancelar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Loading jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Local JavaScript code -->
+    <script src="manageRegistration.js"></script>
+
+    <!-- Link to datatables.net -->
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+</body>
+
+</html>
+
+
+<!-- FOOTER SECTION -->
+<footer>
+    <div class="footerContainer">
+
+        <div class="icons">
+            <a href="https://www.youtube.com" target="_blank" rel="noopener">
+                <i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener">
+                <i class="fa-brands fa-instagram"></i></a>
+        </div>
+
+        <p>Diseño: Sistemas Hospital Santojanni </p>
+    </div>
+
+</footer>

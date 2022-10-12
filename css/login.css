@@ -1,0 +1,359 @@
+:root {
+    --primary-color: rgba(13, 110, 139, 0.75);
+    --overlay-color: rgba(24, 39, 51, 0.85);
+    --btn-background-green: rgba(137, 190, 109, 1);
+}
+
+
+/* Normalize */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    line-height: 1.2;
+}
+
+.loginBackground {
+    display: 'inline';
+    width: 100%;
+    height: 100vh;
+    /* background-color: var(--primary-color); */
+    background-image: linear-gradient(rgba(13, 110, 139, 0.2), rgba(13, 110, 139, 0.2)), url("../img/backgroundRegistration.jpg");
+    position: relative;
+    top: 0;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+}
+
+.loginContainer {
+    margin: 0 auto;;
+    width: 350px;
+    padding: 1.5rem;
+    background-color: #f4f4f4;
+    text-align: center;
+    border-radius: 10px;
+    background-image: linear-gradient(rgba(13, 110, 139, 0.9), rgba(13, 110, 139, 0.7));
+    box-shadow: 3px 3px 3px 2px rgba(24, 39, 51, 0.6);
+}
+
+.formHeader {
+    width: 100%;
+    margin: 1rem 0;
+    color: #f4f4f4;
+    text-align: center;
+}
+
+.formHeader h2 {
+    font-size: 2rem;
+    color: #f4f4f4;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+.formBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formBody input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    color: #3c3c3d;
+    background-color: #ddd;
+}
+
+.formBody input:focus {
+    background-color: #f4f4f4;
+    outline: 2px solid var(--btn-background-green);
+}
+
+.formBody .passwordContainer {
+    width: 100%;
+    position: relative;
+}
+
+#showPassword {
+    cursor: pointer;
+}
+
+.fa-eye {
+    position: absolute;
+    top: 40%;
+    right: 5%;
+}
+
+.fa-eye-slash {
+    position: absolute;
+    top: 40%;
+    right: 5%;
+}
+
+.formBody .invalidCredentials {
+    display: none;
+    color: #F6E019;
+}
+
+.formBody button {
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    margin: 1rem 0;
+    padding: 0.5rem 0.2rem;
+    /* border: 3px solid rgba(24, 39, 51, 0.1);
+    background-color: rgba(24, 39, 51, 0.7); */
+    background-color: var(--btn-background-green);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 400;
+    visibility: visible;
+    transition: 0.25s ease;
+}
+
+.formBody button:hover {
+    opacity: 0.7;
+}
+
+/* ************************************************
+Codigo CSS para el DIV tableBackground
+************************************************ */
+
+.tableBackground {
+    display: none;
+    padding-top: 5rem;
+    height: 100vh;
+}
+
+
+.tableContainer {
+    max-width: 1200px;
+    min-height: 100vh;
+    margin: 0 auto;
+    overflow-x: visible;
+    padding-top: 3rem;
+}
+
+#example tr,
+#example > th {
+}
+
+.tableContainer .stripe {
+    background-color: #f4f4f4;
+
+}
+
+.tableContainer h1 {
+    width: 100%;
+    margin: 3rem 0 !important;
+    padding: 1rem;
+    color: #f4f4f4;
+    text-align: center;
+font-weight: 600;
+    background-color: var(--primary-color);
+}
+
+.btnCart {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 1.2rem;
+    color: rgb(89, 17, 156);
+    padding: 0.1rem;
+}
+
+.fa-circle-check {
+    font-size: 1.2rem;
+    padding: 0.1rem;
+    color: green;
+}
+
+#example_paginate{
+
+    display: flex;
+    font-size: 1rem;
+}
+
+
+/* ************************************************
+Codigo CSS para el DIV confirmPaymentContainer
+************************************************ */
+.confirmPaymentBackground {
+    background-color: var(--overlay-color);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    display: none;
+}
+
+.confirmPaymentContainer {
+    max-width: 500px;
+    border-radius: 5px;
+    padding: 1rem 0.5rem;
+    background-color: #eee;
+    margin: 0 auto;
+    margin-top: 20vh;
+}
+
+#confirmPayment {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#confirmPayment h3 {
+    margin: 1rem 0;
+}
+
+.inputArea {
+    width: 100%;
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+input {
+    width: 80%;
+    margin: 0 auto;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.btnArea {
+    width: 70%;
+    margin: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btnArea .btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.btnArea .btnSubmit {
+    cursor: pointer;
+    background-color: green;
+    color: #f4f4f4;
+}
+
+.btnArea .btnSubmit:hover {
+    opacity: 0.5;
+}
+
+.btnArea .btnReset {
+    cursor: pointer;
+    background-color: rgb(243, 57, 57);
+    color: #f4f4f4;
+}
+
+.btnArea .btnReset:hover {
+    opacity: 0.5;
+}
+
+
+
+/* Progress Bar */
+/* https://www.youtube.com/watch?v=basf1lH1H-E */
+.progressBar {
+    width: 90%;
+    height: 2.5rem;
+    margin: 1rem auto;
+    padding: 0;
+    border-radius: 1rem;
+    background-color: var(--overlay-color);
+    color: #f4f4f4;
+    position: relative;
+    display: none;
+}
+
+.progressBar::before {
+    content: attr(data-label);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: .5em;
+    top: .5em;
+    bottom: .5em;
+    /* width: 95%; */
+    width: calc(var(--width, 0) * 1%);
+    min-width: 2em;
+    max-width: calc(100%-1em);
+    background-color: #df9760;
+    border-radius: 0.5rem;
+    padding-left: 1rem;
+    font-size: 1rem;
+}
+
+.paymentSuccessfullMessage {
+    text-align: center;
+    display: none;
+
+}
+
+.paymentSuccessfullMessage p {
+    padding-bottom: 1rem;
+}
+
+.paymentSuccessfullMessage p:nth-child(1) {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+
+
+/* **********************************************
+                MEDIA QUERIES
+********************************************** */
+
+@media(max-width:778px) {}
+
+@media(max-width:576px) {
+
+    .loginContainer {
+        width: 90%;
+        min-width: 300px;
+    }
+
+    .confirmPaymentContainer {
+        width: 90%;
+    }
+
+    .btnArea {
+        width: 70%;
+        flex-direction: column;
+    }
+
+    .btnArea .btn {
+        margin-bottom: 1rem;
+    }
+
+}

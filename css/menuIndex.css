@@ -1,0 +1,334 @@
+:root {
+    --primary-color: rgba(13, 110, 139, 0.75);
+    --overlay-color: rgba(24, 39, 51, 0.85);
+}
+
+.menu-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+    height: 50px;
+    /* background-image: linear-gradient(rgba(24, 39, 51, 0.5),rgba(13, 110, 139, 0.8)); */
+    background-image: linear-gradient(rgb(35, 56, 73), rgb(13, 110, 139));
+    border-bottom: 1px solid rgba(13, 110, 139, 0.1);
+    box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.3);
+}
+
+
+.menu-wrap .menuDesktop{
+    width: 100%;
+    display: inline-block;
+}
+
+.menu-wrap .menuDesktop .menuDesktopContainer{
+    width: 70%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.menu-wrap .menuDesktop ul{
+    display: flex;
+    height: 50px;
+    justify-content: space-around;
+  align-items: center;
+}
+.menu-wrap .menuDesktop ul li{
+    list-style: none;
+    color: white;
+    font-size: 1.1rem;
+    padding: 1rem;
+}
+
+.menu-wrap .menuDesktop ul a{
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.4s ease;
+}
+
+.menu-wrap .menuDesktop ul a:hover{
+opacity: 0.5;
+}
+
+.menu-wrap .loginIcon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.menu-wrap .loginIcon a {
+    color: #f4f4f4;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 200;
+    padding: 0 0.5rem;
+}
+
+.menu-wrap .loginIcon a:hover {
+    opacity: 0.7;
+}
+
+.menu-wrap .fa-user::after {
+    content: "Ingresar";
+    padding-left: 0.5rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-size: .9rem;
+}
+
+.menu-wrap .toggler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+}
+
+
+
+.menu-wrap .hamburguer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 60px;
+    height: 50px;
+    padding: 1rem;
+    /* background-color: var(--primary-color); */
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Navbar */
+.navBar {
+    /* height: 100%; */
+    background-image: linear-gradient(var(--overlay-color), var(--primary-color));
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    /* background-color: var(--primary-color); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f4f4f4;
+}
+
+/* Hamburguer line */
+
+
+.menu-wrap .fa-instagram,
+.menu-wrap .fa-youtube {
+    display: none;
+}
+
+.menu-wrap .hamburguer>div {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+/* Top and bottom lines */
+.menu-wrap .hamburguer>div::before,
+.menu-wrap .hamburguer>div::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+    width: 100%;
+    height: 2px;
+    background-color: inherit;
+}
+
+/* Moves line down */
+.menu-wrap .hamburguer>div::after {
+    top: 10px;
+}
+
+/* Toggler Animate */
+.menu-wrap .toggler:checked+.hamburguer>div {
+    transform: rotate(45deg);
+}
+
+/* Turn lines into X */
+.menu-wrap .toggler:checked+.hamburguer>div:before,
+.menu-wrap .toggler:checked+.hamburguer>div:after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+/* Rotate on hover when checked */
+.menu-wrap .toggler:checked:hover+.hamburguer>div {
+    transform: rotate(225deg);
+}
+
+/* Rotate on hover when checked */
+.menu-wrap .toggler:hover+.hamburguer>div:before,
+.menu-wrap .toggler:hover+.hamburguer>div:after {
+    top: 0;
+    transition: all 0.2s ease-out;
+}
+
+
+/* Show Menu */
+
+.menu-wrap .toggler:checked~.menu {
+    visibility: visible;
+}
+
+.menu-wrap .toggler:checked~.menu>div {
+    transform: scale(1);
+    transition-duration: var(--menu-speed);
+}
+
+
+.menu-wrap .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.menu-wrap .menu>div {
+    background: var(--overlay-color);
+    /* border-radius: 50%; */
+    width: 200vw;
+    height: 200vh;
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: scale(0);
+    transform: all 0.4s ease;
+}
+
+.menu-wrap .menu>div>ul>li {
+    list-style: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.menu-wrap .menu>div>ul>li>a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.4s ease;
+}
+
+
+
+/* BOTTOM NAVBAR */
+.bottomNav {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #f0f0f0;
+    z-index: 1;
+    display: none;
+}
+
+.navContainer {
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.navContainer>div {
+    text-align: center;
+}
+
+.navContainer p {
+    font-size: 0.7rem;
+}
+
+
+.navContainer .material-symbols-outlined {
+    margin: 0;
+    vertical-align: bottom;
+    color: var(--overlay-color);
+}
+
+
+
+.navIcon {
+    border: 1px solid var(--overlay-color);
+    padding: 0.5rem;
+    margin: 0;
+    border-radius: 5px;
+    color: var(--overlay-color);
+}
+
+
+
+.navIcon a {
+    text-decoration: none;
+    color: var(--primary-color);
+
+}
+
+.navIcon a:hover {
+    background-color: #a0a0a0;
+
+}
+
+
+
+/* **********************************************
+                MEDIA QUERIES
+********************************************** */
+
+
+@media(max-width:1024px) {
+    .menu-wrap .hamburguer {
+        display: flex;
+    }
+
+    .menu-wrap .fa-instagram,
+    .menu-wrap .fa-youtube {
+        display: inline-block;
+    }
+
+    .menu-wrap .menuDesktop{
+        display: none;
+    }
+
+    .menu-wrap .fa-user::after {
+        content: "";
+    }
+
+}
+
+@media(max-width:778px) {}
+
+@media(max-width:576px) {
+    .menu-wrap .loginIcon a::after {
+        content: '';
+    }
+
+    .bottomNav {
+        display: inline-flex;
+    }
+
+
+
+}

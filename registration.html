@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+
+    <!-- FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/628afeffd4.js" crossorigin="anonymous"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@500&family=PT+Serif:ital,wght@1,700&family=Roboto:wght@100;300;400&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;1,300&display=swap"
+        rel="stylesheet">
+
+  <!-- Google icons -->
+  <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Link CSS local -->
+    <link rel="stylesheet" href="./css/registration.css">
+    <link rel="stylesheet" href="./css/menuIndex.css">
+    <link rel="stylesheet" href="./css/styleIndex.css">
+
+</head>
+
+<body>
+
+
+    <!-- HEADER SECTION     -->
+
+    <div class="menu-wrap">
+        <div class="loginIcon">
+            <a href="login.html" target="_blank"><i class="fa-solid fa-user"></i></a>
+        </div>
+        <input type="checkbox" class="toggler">
+        <div class="hamburguer">
+            <div></div>
+        </div>
+        <div class="menu">
+            <div>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="programa.html">Programa</a></li>
+                    <li><a href="registration.html">Inscripción</a></li>
+                    <li><a href="contacto.html">Consultas</a></li>
+                    <li><a href="#">Nosotros</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="menuDesktop">
+            <div class="menuDesktopContainer">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="programa.html">Programa</a></li>
+                    <li><a href="registration.html">Inscripción</a></li>
+                    <li><a href="contacto.html">Consultas</a></li>
+                    <li><a href="#">Nosotros</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Main Section -->
+    <main>
+        <div class="formBackground">
+            <form class="ajax" id="form">
+
+                <div class="formContainer">
+                    <div class="formHeader">
+                        <h2>Registro</h2>
+                        <a href="index.html"><i class="fa-solid fa-door-open fa-xl"></i></a>
+                        <h3 class="password">Por favor completá la siguiente información</h2>
+                    </div>
+                        <input id="inputFirstName" class="input w100" type="text" name="firstName" placeholder="Nombre">
+                        <!-- <span class="enterFirstName">Este campo es obligatorio</span> -->
+                        <span id="firstNameAlert" class="inputAlert"></span>
+
+                        <input id="inputLastName" class="input w100" type="text" name="lastName" placeholder="Apellido">
+                        <!-- <span class="enterLastName">Este campo es obligatorio</span> -->
+                        <span id="lastNameAlert" class="inputAlert"></span>
+
+                        <input id="inputCell" class="input w100" type="text" name="cell" placeholder="Cell" >
+                        <!-- <span class="enterCell">Este campo es obligatorio</span> -->
+                        <span id="cellAlert" class="inputAlert"></span>
+
+                        <input id="inputEmail" class="input w100" type="text" name="email" placeholder="E-mail" >
+                        <span id="emailAlert" class="inputAlert"></span>
+                        <!-- <span class="enterEmail">Este campo es obligatorio</span> -->
+                        <!-- <span class="wrongEmail">Debe ingresar un correo valido</span> -->
+
+                    <select class="input w100" type="text" name="servicio" id="formSelect" >
+                        <option value="Elegir" selected>Elegir Servicio...</option>
+                    </select>
+                    <!-- <span class="enterServicio">Este campo es obligatorio</span> -->
+                    <span id="servicioAlert" class="inputAlert"></span>
+                    <!-- <div class="passwordContainer">
+                        <input class="input w100" type="password" name="password" placeholder="Contraseña"
+                            id="passwordField">
+                        <i class="fa-solid fa-eye-slash" id="showPassword"></i>
+                    </div> -->
+                    <div class="warningMessage">
+                        <p>Hay errores que corregir</p>
+                    </div>
+                    <div class="btnProgressArea">
+                        <div class="btnArea">
+                            <input class="btnWidth btn" type="submit" value="Enviar" id="formSubmit">
+                            <!-- <input class="btnWidth btn" type="reset" value="Borrar"> -->
+                        </div>
+                        <div class="progressBar" data-label="Procesando..." data-label1="Enviado"></div>
+                    </div>
+
+                    <div class="registrationHelp">
+                        <a href="contacto.html"> <p><span><i class="fa-solid fa-circle-question"></i></span>    Si necesitas ayuda con la inscripción hace click aquí </p></a>
+                       
+                    </div>
+                </div>
+
+            </form>
+
+
+        </div>
+
+        <div class="alertNewUser">
+            <div class="alertContainer">
+
+                <i class="fa-solid fa-circle-xmark fa-xl alertContainerClose" id="alertContainerCloseNU"></i>
+
+                <div class="alertContainerHeader">
+                    <span><i class="fa-solid fa-user-doctor fa-xl"></i></span>
+                    <h1>Registración exitosa!</h1>
+                </div>
+
+                <p>Para completar la inscripción deberás abonar en AMM 1er piso. Tenes tiempo hasta el 31 de octubre.</p>
+                <br>
+                <p>Revisá tu correo, te enviamos:</p>
+                <br>
+                <ul>
+                    <li><span><i class="fa-regular fa-envelope"></i></span> un e-mail de confirmación (recordá revisar
+                        la carpeta de Spam)</li>
+                    <li><span><i class="fa-regular fa-calendar"></i></span> un evento de Google Calendar (para que lo
+                        agregues a tu calendario)</li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="alertRegisteredUser">
+            <div class="alertContainer">
+
+                <i class="fa-solid fa-circle-xmark fa-xl alertContainerClose" id="alertContainerCloseRU"></i>
+
+                <div class="alertContainerHeader">
+                    <span><i class="fa-solid fa-user-doctor fa-xl"></i></span>
+                    <h1>Usuario registrado</h1>
+                </div>
+
+                <p>Ya estas registrado. Revisa por favor:</p>
+                <ul>
+                    <li><span><i class="fa-regular fa-envelope"></i></span> tu casilla de correo con el e-mail de
+                        confirmación (recordá revisar la carpeta de Spam)</li>
+                    <li><span><i class="fa-regular fa-calendar"></i></span> tu casilla de correo con el evento de Google
+                        Calendar para que lo agregues a tu calendario</li>
+                    <!-- <li><span><i class="fa-brands fa-whatsapp"></i></span> tu WhatsApp (agrega el número a tus contactos
+                        para poder consultar al Asistente Virtual</li> -->
+                </ul>
+
+            </div>
+        </div>
+
+        <a class="backgroundCredits" href="https://www.vecteezy.com/free-vector/medical-background"
+            target="_blank">Medical Background Vectors by Vecteezy</a>
+    </main>
+
+
+ <!-- BOTTOM NAVBAR -->
+ <nav class="bottomNav">
+    <div class="navContainer">
+        <div class="navHome">
+            <a href="index.html"><span class="material-symbols-outlined">
+                    home
+                </span></a><p>Inicio</p>
+        </div>
+        <div class="navAgenda">
+            <a href="programa.html"><span class="material-symbols-outlined">
+                    event_upcoming
+                </span></a><p>Agenda</p>
+        </div>
+        <div class="navRegistration">
+            <a href="registration.html"><span class="material-symbols-outlined">
+                app_registration
+            </span></a><p>Registro</p>
+        </div>
+        <div class="navContacto">
+            <a href="contacto.html"><span class="material-symbols-outlined">
+                contact_support
+            </span></a><p>Consultas</p>
+        </div>
+
+        </div>
+    </div>
+</nav>
+
+    <!-- FOOTER SECTION -->
+
+    <footer>
+        <div class="footerContainer">
+
+            <div class="icons">
+                <a href="https://www.youtube.com" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-instagram"></i></a>
+            </div>
+
+            <p>Diseño: Sistemas Hospital Santojanni </p>
+        </div>
+
+    </footer>
+
+    <!-- Loading jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Local JS -->
+    <script src="registration.js"></script>
+
+</body>
+
+</html>
