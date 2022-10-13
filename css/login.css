@@ -328,6 +328,20 @@ input {
     font-weight: 600;
 }
 
+.paymentSuccessfullNoMailMessage {
+    text-align: center;
+    display: none;
+
+}
+
+.paymentSuccessfullNoMailMessage p {
+    padding-bottom: 1rem;
+}
+
+.paymentSuccessfullNoMailMessage p:nth-child(1) {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
 
 
 /* **********************************************

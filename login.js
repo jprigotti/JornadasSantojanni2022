@@ -2,7 +2,7 @@
 const webApp_retrieveMedicalList = 'https://script.google.com/macros/s/AKfycbzQeIrYwMdcPIgQb7wZ9kX5_4ztb5jUEESf9CnAnmYw1DRGWn3sXUYdJ4IZjLbJSTmnww/exec';
 const webApp_retrieveRegisteredUsers = 'https://script.google.com/macros/s/AKfycbyPm0Bzim5390Abv2SGkDQLupiMkJCFZdmrP2NbgGdxfFlmOgTeQTQ-KHgK6TAD2iA/exec';
 const webApp_purchaseUpdate = 'https://script.google.com/macros/s/AKfycbxaIdu3rkChkNrijcCCYJnRpctxt06uCfb0QnhtHxN3sLcBQntJx6HYPPwphBeTSlY/exec';
-
+const webAppJS2022_sendPayConfEmail = '';
 
 /***********************************************************************
         EVENTS
@@ -375,16 +375,43 @@ function confirmPurchase() {
     clearInterval(myInterval); //Stop progress bar counter
     reInitializeDataTable();
 
-    $(".progressBar").css({ 'display': 'none' }); //hide progress bar
-    $(".paymentSuccessfullMessage").css({ 'display': 'inline' });
+    $.ajax({
+        method: "post",
+        redirect: "follow",
+        url: webAppJS2022_sendPayConfEmail,
+        dataType: 'json',
+        accepts: 'application/json',
+        data,
+        success: (list) => {
 
-    setTimeout(function () {
-        document.querySelector("#confirmPayment").reset(); //clear all input form //clear all input form
-        $(".paymentSuccessfullMessage").css({ 'display': 'none' });
-        $(".btnArea").css({ 'display': 'flex' });
-        $('.confirmPaymentBackground').css({ 'display': 'none' });
+            $(".progressBar").css({ 'display': 'none' }); //hide progress bar
+            $(".paymentSuccessfullMessage").css({ 'display': 'inline' });
+        
+            setTimeout(function () {
+                document.querySelector("#confirmPayment").reset(); //clear all input form //clear all input form
+                $(".paymentSuccessfullMessage").css({ 'display': 'none' });
+                $(".btnArea").css({ 'display': 'flex' });
+                $('.confirmPaymentBackground').css({ 'display': 'none' });
+        
+            }, 3000);
 
-    }, 3000);
+        },
+        error: (err) => {
+            $(".progressBar").css({ 'display': 'none' }); //hide progress bar
+            $(".paymentSuccessfullNoMailMessage").css({ 'display': 'inline' });
+        
+            setTimeout(function () {
+                document.querySelector("#confirmPayment").reset(); //clear all input form //clear all input form
+                $(".paymentSuccessfullNoMailMessage").css({ 'display': 'none' });
+                $(".btnArea").css({ 'display': 'flex' });
+                $('.confirmPaymentBackground').css({ 'display': 'none' });
+        
+            }, 3000);
+        }
+    });
+
+
+
 
 }
 
