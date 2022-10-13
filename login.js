@@ -2,7 +2,7 @@
 const webApp_retrieveMedicalList = 'https://script.google.com/macros/s/AKfycbzQeIrYwMdcPIgQb7wZ9kX5_4ztb5jUEESf9CnAnmYw1DRGWn3sXUYdJ4IZjLbJSTmnww/exec';
 const webApp_retrieveRegisteredUsers = 'https://script.google.com/macros/s/AKfycbyPm0Bzim5390Abv2SGkDQLupiMkJCFZdmrP2NbgGdxfFlmOgTeQTQ-KHgK6TAD2iA/exec';
 const webApp_purchaseUpdate = 'https://script.google.com/macros/s/AKfycbxaIdu3rkChkNrijcCCYJnRpctxt06uCfb0QnhtHxN3sLcBQntJx6HYPPwphBeTSlY/exec';
-const webAppJS2022_sendPayConfEmail = '';
+const webAppJS2022_sendPayConfEmail = 'https://script.google.com/macros/s/AKfycbzpD4EFh-k8cX1aDuWVynZxZfPsPaXjupzWFnMvdqEJhtR0HNsyExSYNpgjLjGM5Bg/exec';
 
 /***********************************************************************
         EVENTS
@@ -92,7 +92,7 @@ $('#confirmPayment').submit(function (evento) {
         accepts: 'application/json',
         data,
         success: (list) => {
-            confirmPurchase();
+            confirmPurchase(data);
             // console.log(list);
             // document.querySelector("#confirmPayment").reset(); //clear all input form
             // $('.confirmPaymentBackground').css({ 'display': 'none' });
@@ -130,14 +130,6 @@ $('#showPassword').click(function () {
     const type = password.getAttribute("type") === "password" ? "text" : "password";
     password.setAttribute("type", type);
 });
-
-/***********************************************************************
-        Para acomodar la tabla DataTables
-************************************************************************
-
-***********************************************************************/
-
-document.querySelector('#example_previous').innerHTML="Anterior";
 
 
 /***********************************************************************
@@ -371,7 +363,7 @@ This function has to:
 
 ***********************************************************************/
 
-function confirmPurchase() {
+function confirmPurchase(data) {
     clearInterval(myInterval); //Stop progress bar counter
     reInitializeDataTable();
 
@@ -382,7 +374,7 @@ function confirmPurchase() {
         dataType: 'json',
         accepts: 'application/json',
         data,
-        success: (list) => {
+        success: () => {
 
             $(".progressBar").css({ 'display': 'none' }); //hide progress bar
             $(".paymentSuccessfullMessage").css({ 'display': 'inline' });
